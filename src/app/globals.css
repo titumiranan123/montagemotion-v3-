@@ -5,22 +5,50 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.navShadow {
+  border: 1px solid #1fb5dd80;
+  box-shadow: 0px 4px 15px 0px #1fb5ddcc inset, 0px 4px 15px 0px #1fb5dd1a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.hiddennav {
+  position: fixed;
+  bottom: 20px;
+  z-index: 99;
+  left: 29.4%;
+  transition: top 0.5s ease;
+}
+
+.move-to-footer {
+  position: fixed;
+  bottom: 20px;
+  z-index: 99;
+  left: 35%;
+  transition: top 0.5s ease;
+}
+
+@layer base {
+  h1 {
+    font-family: var(--font-poppins);
+  }
+  h2 {
+    font-family: var(--font-montserrat);
+    @apply font-[700] lg:text-[64px] leading-[76px] text-[24px]
+  }
+  p {
+    font-family: var(--font-opensans);
+    @apply text-[16px] leading-[22.4px] font-[400]
   }
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .container{
+    @apply max-w-[1440px] mx-auto px-[160px]
+  }
+  .section {
+    @apply  lg:mt-[120px] mt-16 ;
+  }
+}
+@layer utilities {
+  .font-poppins {
+    font-family: var(--font-poppins);
+  }
 }
