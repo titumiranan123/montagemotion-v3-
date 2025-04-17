@@ -1,4 +1,5 @@
-import Header from "@/component/Header/Header";
+import Faq from "@/component/home/Faq";
+import Header from "@/component/home/Header";
 import Image from "next/image";
 export const metadata = {
   title: 'MontageMotion | Professional Video Editing Services',
@@ -29,6 +30,7 @@ export default function Home() {
   return (
   <div className="">
     <Header />
+    <Faq />
   </div>
   );
 }

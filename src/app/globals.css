@@ -51,4 +51,10 @@
   .font-poppins {
     font-family: var(--font-poppins);
   }
+  .font-montserrat {
+    font-family: var(--font-montserrat);
+  }
+  .font-opensans {
+    font-family: var(--font-opensans);
+  }
 }
