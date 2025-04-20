@@ -1,7 +1,6 @@
 
 
 const Privacypolicy = () => {
-  
     return (
       <div className="max-w-[1240px] mx-auto px-2">
         <h1 className="mb-[60px] mt-[120px] text-center text-[36px] text-white ">
