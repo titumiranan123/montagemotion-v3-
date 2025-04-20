@@ -34,6 +34,10 @@
     font-family: var(--font-montserrat);
     @apply font-[700] lg:text-[64px] leading-[76px] text-[24px]
   }
+  h3 {
+    font-family: var(--font-montserrat);
+    @apply font-[700] lg:text-[24px] lg:leading-[33.6px] text-[20px]
+  }
   p {
     font-family: var(--font-opensans);
     @apply text-[16px] leading-[22.4px] font-[400]
