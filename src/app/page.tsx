@@ -1,5 +1,8 @@
 import Faq from "@/component/home/Faq";
+import Fullformvideo from "@/component/home/Fullformvideo";
 import Header from "@/component/home/Header";
+import Services from "@/component/home/Services";
+import Shortformvideo from "@/component/home/Shortformvideo";
 import Image from "next/image";
 export const metadata = {
   title: 'MontageMotion | Professional Video Editing Services',
@@ -30,6 +33,9 @@ export default function Home() {
   return (
   <div className="">
     <Header />
+    <Services />
+    <Fullformvideo />
+    <Shortformvideo />
     <Faq />
   </div>
   );

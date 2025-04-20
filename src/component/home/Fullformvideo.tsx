@@ -1,4 +1,5 @@
 import React from 'react';
+import FullLengthcard from './FullLengthcard';
 
 const Fullformvideo = () => {
     return (
@@ -9,6 +10,14 @@ const Fullformvideo = () => {
           Montage Motion is an Advertising and Digital Agency speciallzing in
           InFluencer Marketing
         </p>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 max-w-[998px] mx-auto gap-4 mt-16">
+        <FullLengthcard />
+        <FullLengthcard />
+        <FullLengthcard />
+        <FullLengthcard />
+        <FullLengthcard />
+        <FullLengthcard />
       </div>
         </div>
     );
