@@ -1,14 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
+
 import { api_url } from './Apiurl';
-const useIntro = () => {
+
+const useContact = () => {
     const {data,isLoading,isError} = useQuery({
-        queryKey:["headers"],
+        queryKey:["contacts"],
         queryFn:async ()=>{
-        const res = await api_url.get(`/api/header`)
+        const res = await api_url.get('/api/contacts')
         return res.data.data
         }
     })
     return {data,isLoading,isError}
 };
 
-export default useIntro;
+export default useContact;

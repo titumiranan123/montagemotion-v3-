@@ -1,158 +1,238 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const Foooter = () => {
+const Footer = () => {
   const [email, setEmail] = useState("");
-  const onSubmit = async (event:any) => {
+  const onSubmit = async (event: any) => {
     event.preventDefault();
-   console.log(event)
+    console.log(event);
   };
 
   return (
-    <>
-      <div className="grid grid-cols-2 pb-10 mt-[64px] md:mt-[74px] gap-10 lg:grid-cols-4 md:grid-cols-2 container section   text-[#E4E8F7]">
-        <div className="flex flex-col gap-2 col-span-2 md:col-span-1  space-y-4">
-      
-            <Image width={235} height={92}  src={'/assets/footerlogo.png'} alt="" />
-         
-
-          <p className=" text-[16px] openSans text-[#E4E8F7] ">
-            Subscribe our newsletter to stay <br />
-            updated and get special offers.
-          </p>
-          <form
-            onSubmit={onSubmit}
-            className="flex items-center text-[#404147] border bg-white cardtitle border-gray-200 rounded-[33px] shadow-sm"
-          >
-            <input
-              type="email"
-              placeholder="Enter Your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full py-2 px-4 rounded-[33px] focus:outline-none bg-white focus:border-blue-500"
+    <footer className="container w-full section  pt-10 pb-4  ">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 gap-8 pb-10 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Logo and Newsletter */}
+          <div className="sm:col-span-2 lg:col-span-1 space-y-4">
+            <Image
+              width={185}
+              height={92}
+              src={'/assets/footerlogo.png'}
+              alt="Company Logo"
+              className="w-40 md:w-56"
             />
-            <button
-              type="submit"
-              className="btn subscribe px-4 py-2 rounded-[33px] text-white bg-white border border-white hover:border-white focus:border-white transition duration-300 tracking-[1px]"
+            <p className="text-[14px] md:text-[16px] openSans text-[#E4E8F7]">
+              Subscribe our newsletter to stay updated and get special offers.
+            </p>
+            <form
+              onSubmit={onSubmit}
+              className="flex flex-col sm:flex-row gap-2 items-center"
             >
-              Subscribe
-            </button>
-          </form>
-        </div>
-        <div className="flex flex-col  gap-2 md:ms-16">
-          <h3 className="semitext font-bold md:text-[24px] text-[20px]  ">
-            Services
-          </h3>
-          <ul className="list-none text-[#E4E8F7] mt-2 md:text-[16px] text-[12px] openSans space-y-2">
-            <Link className="hover:underline" href={"/services"}>
-              <li className="cursor-pointer">Global </li>
-            </Link>
-            <Link className="hover:underline" href={"/services"}>
-              <li className="cursor-pointer">For Bangladesh </li>
-            </Link>
-          </ul>
-          <h3 className="semitext font-bold md:text-[24px] text-[20px]  ">
-            Others
-          </h3>
-          <ul className="list-none text-[#E4E8F7] mt-2 md:text-[16px] text-[12px] openSans space-y-2 flex flex-col ">
-            <Link className="hover:underline" href={"privacy-policy"}>
-              Privacy Policy
-            </Link>
-            <Link className="hover:underline" href={"terms-and-conditions"}>
-              Terms & Conditions
-            </Link>
+              <input
+                type="email"
+                placeholder="Enter Your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full py-3 px-4 rounded-[33px] focus:outline-none bg-white text-[#404147]"
+              />
+              <button
+                type="submit"
+                className="w-full sm:w-auto px-6 py-3 rounded-[33px] text-white bg-[#1FB5DD] hover:bg-[#1899C0] transition duration-300"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
 
-            <Link className="hover:underline" href={"refund-policy"}>
-              Refund Policy
-            </Link>
-          </ul>
-        </div>
-        <div className="flex   flex-col gap-2">
-          <h3 className="semitext font-bold md:text-[24px] text-[20px]  ">
-            About Us
-          </h3>
-          <ul className="list-none text-[#E4E8F7] mt-2 md:text-[16px] text-[12px] openSans space-y-4">
-            <Link className="hover:underline" href={"/about"}>
-              <li className="cursor-pointer">Our Story</li>
-            </Link>
-            <Link className="hover:underline" href={"/about"}>
-              <li className="cursor-pointer">Our Mission & Vision </li>
-            </Link>
-            <Link className="hover:underline" href={"/about"}>
-              {" "}
-              <li className="cursor-pointer">Our Team </li>
-            </Link>
-          </ul>
-        </div>
-        <div className="flex gap-2  md:ms-16 lg:ms-0 ms-0 flex-col">
-          <h3 className="semitextf  font-bold md:text-[24px] text-[20px]  ">
-            Contact Info
-          </h3>
-          <ul className="list-none mt-2  openSans md:text-[16px] text-[12px] text-[#E4E8F7] flex flex-col gap-3  ">
-            <li>
-              Mirpur Dohs, Dhaka,
-              <br /> Bangladesh{" "}
-            </li>
-            <li className="">
-              GOLDEN LIFE LINE IMITED 34 Turner Street, London{" "}
-            </li>
-            <li className="flex gap-2 mt-3  items-center">
-              {" "}
-              <a
-                className="flex  gap-2 items-center"
-                href="mailto:+0883797438438"
-              >
-                <Image width={24} height={24} layout="responsive" src={'/assets/Call Icon.png'} alt="" /> <p>+8801786546949</p>
-              </a>
-            </li>
-            {/* <li>
-              <a
-                className="flex  gap-2 items-center"
-                href="mailto:info@montagemotion.com"
-              >
-                <Image src={emailIcon} alt="" /> <p>info@montagemotion.com </p>
-              </a>
-            </li> */}
-          </ul>
-          <div>
-            <div className="flex gap-2 mt-4">
+          {/* Services and Others */}
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-bold text-[18px] md:text-[24px] text-white">
+                Services
+              </h3>
+              <ul className="mt-3 space-y-2">
+                <li>
+                  <Link
+                    href="/services"
+                    className="text-[14px] md:text-[16px] openSans text-[#E4E8F7] hover:underline hover:text-white"
+                  >
+                    Global
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services"
+                    className="text-[14px] md:text-[16px] openSans text-[#E4E8F7] hover:underline hover:text-white"
+                  >
+                    For Bangladesh
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-[18px] md:text-[24px] text-white">
+                Others
+              </h3>
+              <ul className="mt-3 space-y-2">
+                <li>
+                  <Link
+                    href="privacy-policy"
+                    className="text-[14px] md:text-[16px] openSans text-[#E4E8F7] hover:underline hover:text-white"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="terms-and-conditions"
+                    className="text-[14px] md:text-[16px] openSans text-[#E4E8F7] hover:underline hover:text-white"
+                  >
+                    Terms & Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="refund-policy"
+                    className="text-[14px] md:text-[16px] openSans text-[#E4E8F7] hover:underline hover:text-white"
+                  >
+                    Refund Policy
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* About Us */}
+          <div className="space-y-4">
+            <h3 className="font-bold text-[18px] md:text-[24px] text-white">
+              About Us
+            </h3>
+            <ul className="mt-3 space-y-3">
+              <li>
+                <Link
+                  href="/about"
+                  className="text-[14px] md:text-[16px] openSans text-[#E4E8F7] hover:underline hover:text-white"
+                >
+                  Our Story
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="text-[14px] md:text-[16px] openSans text-[#E4E8F7] hover:underline hover:text-white"
+                >
+                  Our Mission & Vision
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="text-[14px] md:text-[16px] openSans text-[#E4E8F7] hover:underline hover:text-white"
+                >
+                  Our Team
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-4">
+            <h3 className="font-bold text-[18px] md:text-[24px] text-white">
+              Contact Info
+            </h3>
+            <ul className="mt-3 space-y-3 text-[14px] md:text-[16px] openSans text-[#E4E8F7]">
+              <li>
+                Mirpur Dohs, Dhaka,
+                <br /> Bangladesh
+              </li>
+              <li>
+                GOLDEN LIFE LINE IMITED
+                <br /> 34 Turner Street, London
+              </li>
+              <li className="flex items-center gap-2 mt-3">
+                <Image
+                  width={20}
+                  height={20}
+                  src={'/assets/Call Icon.png'}
+                  alt="Phone"
+                  className="w-5 h-5"
+                />
+                <a href="tel:+8801786546949">+8801786546949</a>
+              </li>
+            </ul>
+
+            {/* Social Media */}
+            <div className="flex gap-4 mt-4">
               <Link
                 target="_blank"
-                href={"https://www.facebook.com/profile.php?id=61555719839132"}
+                href="https://www.facebook.com/profile.php?id=61555719839132"
+                aria-label="Facebook"
               >
-                <Image width={24} height={24} layout="responsive" src={'/assets/facebook.png'} alt="" />
+                <Image
+                  width={24}
+                  height={24}
+                  src={'/assets/facebook.png'}
+                  alt="Facebook"
+                  className="w-6 h-6 hover:opacity-80 transition-opacity"
+                />
               </Link>
               <Link
                 target="_blank"
-                href={"https://www.linkedin.com/company/montagemotion/"}
+                href="https://www.linkedin.com/company/montagemotion/"
+                aria-label="LinkedIn"
               >
-                <Image width={24} height={24} layout="responsive" src={'/assets/linkdin.png'} alt="" />
+                <Image
+                  width={24}
+                  height={24}
+                  src={'/assets/linkdin.png'}
+                  alt="LinkedIn"
+                  className="w-6 h-6 hover:opacity-80 transition-opacity"
+                />
               </Link>
               <Link
                 target="_blank"
-                href={"https://www.instagram.com/montagemotion_official/"}
+                href="https://www.instagram.com/montagemotion_official/"
+                aria-label="Instagram"
               >
-                <Image width={24} height={24} layout="responsive" src={'/assets/instragram.png'} alt="" />
+                <Image
+                  width={24}
+                  height={24}
+                  src={'/assets/instragram.png'}
+                  alt="Instagram"
+                  className="w-6 h-6 hover:opacity-80 transition-opacity"
+                />
               </Link>
               <Link
-                href={"https://www.youtube.com/channel/UC4CE0a0OHH7LYYgkAGvEslw"}
                 target="_blank"
+                href="https://www.youtube.com/channel/UC4CE0a0OHH7LYYgkAGvEslw"
+                aria-label="YouTube"
               >
-                <Image width={24} height={24} layout="responsive" src={'/assets/youtube.png'} alt="" />
+                <Image
+                  width={24}
+                  height={24}
+                  src={'/assets/youtube.png'}
+                  alt="YouTube"
+                  className="w-6 h-6 hover:opacity-80 transition-opacity"
+                />
               </Link>
             </div>
           </div>
         </div>
-      </div>
-      <div className="bg-[#E4E8F7] h-[2px] w-full mb-2"></div>
-      <div className="flex justify-center items-center pb-4 text-[#E4E8F7] md:text-[16px] text-[12px] openSans">
-        <p>© 2023 Motion Montage All Rights Reserved.</p>
-      </div>
-    </>
+
+        {/* Divider */}
+        <div className="bg-[#E4E8F7] h-[1px] w-full my-4"></div>
+
+        {/* Copyright */}
+        <div className="text-center text-[12px] md:text-[14px] openSans text-[#E4E8F7]">
+          <p>© {new Date().getFullYear()} Motion Montage All Rights Reserved.</p>
+        </div>
+     
+    </footer>
   );
 };
 
-export default Foooter;
+export default Footer;

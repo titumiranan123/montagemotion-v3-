@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: import('next').NextConfig = {
   images: {
     domains: ['i.postimg.cc'], // Add any other domains you need
   },
