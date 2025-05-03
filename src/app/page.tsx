@@ -1,6 +1,7 @@
 import Faq from "@/component/home/Faq";
 import Fullformvideo from "@/component/home/Fullformvideo";
 import Header from "@/component/home/Header";
+import CardStack from "@/component/home/Homestackcard";
 import Services from "@/component/home/Services";
 import Shortformvideo from "@/component/home/Shortformvideo";
 import Image from "next/image";
@@ -33,10 +34,11 @@ export default function Home() {
   return (
   <div className="lg:px-0 px-4">
     <Header />
-    {/* <Services />
-    <Fullformvideo />
-    <Shortformvideo /> */}
-    {/* <Faq /> */}
+    <Services />
+  {/* <CardStack /> */}
+  <Fullformvideo />
+    <Shortformvideo /> 
+    <Faq />
   </div>
   );
 }

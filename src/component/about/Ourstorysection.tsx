@@ -3,7 +3,6 @@ import React from 'react';
 
 const Ourstorysection:React.FC = () => {
     return (
-       
             <div className='max-w-[1000px] mx-auto flex justify-between items-center lg:gap-[100px]'>
                 <Image src={'/assets/ourstory.png'} alt='' width={418.25} height={569} />
                 <div>
@@ -15,9 +14,7 @@ With a passion for precision and an eye for detail, we bring your raw footage to
 At Montage Motion, we don't just edit videos; we curate visual experiences that leave a lasting impact. Join us on a journey where your vision meets our expertise, and together, we create stories that captivate, inspire, and endure. Your narrative matters, and we're here to make it unforgettable.
                     </p>
                 </div>
-
             </div>
-           
     );
 };
 

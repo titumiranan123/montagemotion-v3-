@@ -38,8 +38,8 @@ const Faq = () => {
   ];
   return (
     <div className="section  container">
-      <div className="flex  flex-col text-white  mx-auto gap-4">
-        <h2 className="w-[800px] text-center mx-auto">Frequently Asked Question (FAQ)</h2>
+      <div className="flex  flex-col text-white  mx-auto lg:gap-4 gap-2">
+        <h2 className="lg:w-[800px] text-center mx-auto">Frequently Asked Question (FAQ)</h2>
         <p className="text-center">
           Montage Motion is an Advertising and Digital Agency speciallzing in
           InFluencer Marketing

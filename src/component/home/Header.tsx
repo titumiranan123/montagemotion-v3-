@@ -20,7 +20,7 @@ const Header = () => {
         className="relative header-background w-full  min-h-screen"
     
       >
-        <div className="max-w-[800px] lg:pt-[120px] pt-28 mx-auto px-4">
+        <div className="max-w-[800px] lg:pt-[160px] pt-28 mx-auto px-4">
           <h1 className="text-[#d8d6d6] poppins uppercase z-20 text-[21px] md:text-[45px] lg:text-[64px] font-bold md:leading-[72px] text-center">
             {mainIntro?.title}
           </h1>

@@ -7,15 +7,15 @@
 .header-background {
   background-image: url(/assets/logobackgourd.png);
   background-repeat: no-repeat;
-  background-position:center -90px;
+  background-position: center -10px;
   background-size: contain;
-  background-size: 90%;
+  /* background-size: 90%; */
 }
 
 @media (max-width: 768px) {
   .header-background {
-    background-position: 45% 500%; 
-    background-size: 250%;
+    background-position: 50% 58%;
+    background-size: 200%;
   }
 }
 .navShadow {
@@ -39,40 +39,38 @@
   transition: top 0.5s ease;
 }
 
+
 @layer base {
   h1 {
     font-family: var(--font-poppins);
-    h1 {
-      background: linear-gradient(
-        90deg,
-        #ffffff 0%,
-        #ffffff 49.89%,
-        #1fb5dd 100%
-      );
-      background-clip: text;
-      color: transparent;
-  
-    }
+    background: linear-gradient(
+      90deg,
+      #ffffff 0%,
+      #ffffff 49.89%,
+      #1fb5dd 100%
+    );
+    background-clip: text;
+    color: transparent;
   }
   h2 {
     font-family: var(--font-montserrat);
-    @apply font-[700] lg:text-[64px] leading-[76px] text-[24px]
+    @apply font-[700] lg:text-[64px] leading-[76px] text-[24px];
   }
   h3 {
     font-family: var(--font-montserrat);
-    @apply font-[700] lg:text-[24px] lg:leading-[33.6px] text-[20px]
+    @apply font-[700] lg:text-[24px] lg:leading-[33.6px] text-[20px];
   }
   p {
     font-family: var(--font-opensans);
-    @apply text-[16px] leading-[22.4px] font-[400]
+    @apply text-[16px] leading-[22.4px] font-[400];
   }
 }
 @layer components {
-  .container{
-    @apply max-w-[1440px] mx-auto lg:px-[160px] px-2
+  .container {
+    @apply max-w-[1440px] mx-auto lg:px-[160px] px-2;
   }
   .section {
-    @apply  lg:mt-[120px] mt-16 ;
+    @apply lg:mt-[120px] mt-16;
   }
 }
 @layer utilities {
