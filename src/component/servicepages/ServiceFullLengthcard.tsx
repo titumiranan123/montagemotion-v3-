@@ -12,6 +12,7 @@ interface ServiceFullLengthcardProps {
 }
 
 const ServiceFullLengthcard = ({ work }: ServiceFullLengthcardProps) => {
+    console.log(work,"from card")
     return (
         <section className='relative w-full h-0 lg:pb-[56.25%] rounded-lg sm:rounded-[9.91px] overflow-hidden'>
            

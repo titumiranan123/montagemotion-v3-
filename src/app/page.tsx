@@ -1,10 +1,5 @@
-import Faq from "@/component/home/Faq";
-import Fullformvideo from "@/component/home/Fullformvideo";
-import Header from "@/component/home/Header";
-import CardStack from "@/component/home/Homestackcard";
-import Services from "@/component/home/Services";
-import Shortformvideo from "@/component/home/Shortformvideo";
-import Image from "next/image";
+import ClientWraper from "@/component/home/ClientWrapper";
+
 export const metadata = {
   title: 'MontageMotion | Professional Video Editing Services',
   description: 'Premium video editing for businesses & content creators',
@@ -33,12 +28,7 @@ export const metadata = {
 export default function Home() {
   return (
   <div className="lg:px-0 px-4">
-    <Header />
-    <Services />
-  {/* <CardStack /> */}
-  <Fullformvideo />
-    <Shortformvideo /> 
-    <Faq />
+    <ClientWraper />
   </div>
   );
 }
