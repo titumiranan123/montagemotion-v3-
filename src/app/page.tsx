@@ -1,4 +1,4 @@
-import ClientWraper from "@/component/home/ClientWrapper";
+import ClientWraper from "../component/home/ClientWrapper";
 
 export const metadata = {
   title: 'MontageMotion | Professional Video Editing Services',
@@ -27,7 +27,7 @@ export const metadata = {
 };
 export default function Home() {
   return (
-  <div className="lg:px-0 px-4">
+  <div  className="lg:px-0 px-4">
     <ClientWraper />
   </div>
   );

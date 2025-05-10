@@ -1,14 +1,13 @@
 'use client'
-import HeaderService from '@/component/servicepages/Header';
-import Faqservice from '@/component/servicepages/ServiceFaq';
-import Worksection from '@/component/servicepages/Worksection';
-import useHomeApi from '@/hook/useHomeApi';
+
+import HeaderService from '@/src/component/servicepages/Header';
+import Faqservice from '@/src/component/servicepages/ServiceFaq';
+import Worksection from '@/src/component/servicepages/Worksection';
+import useHomeApi from '@/src/hook/useHomeApi';
 import React from 'react';
 
 const AdvertisingService = () => {
     const {data,isLoading} = useHomeApi()
-    // faqs
-    // testimonial
     return (
         <div className='header-background'>
             <HeaderService  isLoading={isLoading} mainIntro={data?.header} />

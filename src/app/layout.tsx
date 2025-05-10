@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat, Open_Sans, Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/component/Navbar/Navbar";
-import Provider from "@/provider/Provider";
-import Foooter from "@/component/Footer/Foooter";
+import Provider from "../provider/Provider";
+import Navbar from "../component/Navbar/Navbar";
+import Footer from "../component/Footer/Foooter";
 
 const monserrat = Montserrat({
   variable: "--font-montserrat",
@@ -31,10 +31,9 @@ export default function RootLayout({
         className={`${poppins.variable} ${monserrat.variable} ${opensans.variable} bg-black`}
       >
         <Provider>
-
-        <Navbar />
-        {children}
-        <Foooter />
+          <Navbar />
+          {children}
+          <Footer />
         </Provider>
       </body>
     </html>

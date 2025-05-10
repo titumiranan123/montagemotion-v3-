@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig: import('next').NextConfig = {
   images: {
-    domains: ['i.postimg.cc'], // Add any other domains you need
+    domains: ['i.postimg.cc','pub-ec42ff955758460994cdb2c45e5b6daa.r2.dev'],
   },
-  // ... rest of your config
+
 }
 
 module.exports = nextConfig

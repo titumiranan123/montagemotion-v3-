@@ -1,10 +1,12 @@
 'use client'
-import HeaderService from '@/component/servicepages/Header';
-import Faqservice from '@/component/servicepages/ServiceFaq';
-import Worksection from '@/component/servicepages/Worksection';
-import useHomeApi from '@/hook/useHomeApi';
+
 import React from 'react';
 import CarStackScroll from './Homestackcard';
+import Shortvideo from './Shortvideo';
+import useHomeApi from '@/src/hook/useHomeApi';
+import HeaderService from '../servicepages/Header';
+import Worksection from '../servicepages/Worksection';
+import Faqservice from '../servicepages/ServiceFaq';
 
 const ClientWraper = () => {
     const {data,isLoading} = useHomeApi()
@@ -14,6 +16,7 @@ const ClientWraper = () => {
             <HeaderService  isLoading={isLoading} mainIntro={data?.header} />
             <CarStackScroll />
             <Worksection data={data?.works} title='Our Ovc'  description='Montage Motion is an Advertising and Digital Agency specializing in influencer Marketing' isLoading={isLoading}/>
+            <Shortvideo />
             <Faqservice items={data?.faqs} />
         </div>
     );

@@ -4,36 +4,7 @@ import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-
-const CustomLink = React.memo(
-  ({
-    href,
-    className,
-    title,
-  }: {
-    href: string;
-    className?: string;
-    title: string;
-  }) => {
-    const pathname = usePathname();
-    const isActive = pathname === href;
-
-    return (
-      <Link
-        href={href}
-        className={`flex text-white my-auto justify-center items-center font-bold h-full px-3 py-2 text-sm md:text-base
-        ${className} ${
-          isActive
-            ? "rounded-[30px] bg-[#1FB5DD] flex justify-center items-center text-white"
-            : ""
-        } hover:bg-[#1FB5DD] hover:bg-opacity-30 hover:rounded-[30px] transition-colors duration-200`}
-      >
-        {title}
-      </Link>
-    );
-  }
-);
-CustomLink.displayName = "CustomLink";
+import useService from "@/src/hook/useService";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -42,7 +13,7 @@ const Navbar = () => {
     { href: "/", title: "Home" },
     { href: "/works", title: "Works" },
     { href: "/services", title: "Services" },
-    { href: "/case-studies", title: "Case Studies" },
+
     { href: "/blogs", title: "Blogs" },
     { href: "/about", title: "About" },
     { href: "/contact", title: "Contact" },
@@ -51,11 +22,11 @@ const Navbar = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
   };
-
+  const { data: servicesData, isLoading } = useService();
   return (
     <header className=" ">
       <div className="container mx-auto    py-4">
-        <nav className="flex justify-between items-center">
+        <nav className="flex justify-between items-center relative">
           {/* Logo */}
           <Link href="/" className="flex items-center h-[80px]">
             <div className="relative h-8 w-32 md:h-10 md:w-40">
@@ -71,14 +42,42 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center  ">
-            <div className="flex justify-center rounded-xl bg-[#58585833] bg-opacity-50 backdrop-blur-md items-center p-2 text-[#DBDBDB]">
-              {navLinks.map((link) => (
-                <CustomLink
-                  key={link.href}
-                  href={link.href}
-                  title={link.title}
-                />
-              ))}
+            <div className="flex  justify-center rounded-xl bg-[#58585833] bg-opacity-50 backdrop-blur-md items-center p-2 text-[#DBDBDB] gap-5">
+              <Link href={"/"}>Home</Link>
+              <Link href={"/works"}>Works</Link>
+              <div className="group  bg-red-500 cursor-pointer py-2 px-4 rounded-md">
+                Services
+                <div className=" w-[1000px] absolute top-full -left-64 mt-1 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0 z-50">
+                  <div className="bg-white shadow-xl rounded-lg p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border border-gray-100">
+                    {servicesData?.map((service:any) => (
+                      <a
+                        key={service.id}
+                        href={service.href}
+                        className="flex items-start space-x-3 p-3 hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                      >
+                        <div className="flex-shrink-0">
+                          <img
+                            src={service.image}
+                            alt={service.title}
+                            className="w-8 h-8 object-cover rounded-md"
+                          />
+                        </div>
+                        <div>
+                          <h3 className="text-sm text-gray-900">
+                            {service.title}
+                          </h3>
+                          <p className="text-sm text-gray-500 mt-1 line-clamp-2">
+                            {service.description}
+                          </p>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <Link href={"/blogs"}>Blogs</Link>
+              <Link href={"/about"}>About</Link>
+              <Link href={"/contact"}>Contact</Link>
             </div>
           </div>
           {/* Contact Info */}
@@ -143,7 +142,7 @@ const Navbar = () => {
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <div key={link.href} onClick={toggleMobileMenu}>
-                <CustomLink
+                <Link
                   href={link.href}
                   className="font-bold text-lg py-3"
                   title={link.title}

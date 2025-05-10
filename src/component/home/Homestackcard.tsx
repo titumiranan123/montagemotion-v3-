@@ -2,8 +2,9 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import useHomeApi from "@/hook/useHomeApi";
+
 import ServiceFullLengthcard from "../servicepages/ServiceFullLengthcard";
+import useHomeApi from "@/src/hook/useHomeApi";
 
 // Register the plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -45,7 +46,6 @@ const CardStackScroller = () => {
 
     // Recalculate layout after the content loads
     ScrollTrigger.refresh();
-
     // Cleanup scroll triggers on component unmount
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());

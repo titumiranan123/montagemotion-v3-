@@ -5,6 +5,8 @@ import { useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
+import { api_url } from "@/src/hook/Apiurl";
+import toast from "react-hot-toast";
 const ContactForm = () => {
   const [valid, setData] = useState(null);
   function onChange(value: any) {
@@ -16,24 +18,28 @@ const ContactForm = () => {
       const target = e.target;
       const formData = new FormData();
       formData.append("access_key", "9ab377e8-93da-4e3a-9664-c5872080d4b5");
-      formData.append("Name", target.name.value);
-      formData.append("Email", target.email.value);
-      formData.append("Message", target.message.value);
-      console.log(formData);
-    } catch (error) {
-      console.log(error);
+      formData.append("name", target.name.value);
+      formData.append("email", target.email.value);
+      formData.append("message", target.message.value);
+      await api_url.post("/api/contacts", formData);
+      toast.success("Submited 🎉");
+    } catch (error: any) {
+      toast.error(error?.response?.data?.errorMessages[0].message);
     }
   };
 
   return (
-    <div  style={{
-        backgroundImage: "url(/assets/logobackgourd.png)",
+    <div
+      style={{
+        backgroundImage: "url(/assets/background.png)",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "top",
-      }} className="relative container lg:mt-20 mt-16">
+        backgroundPosition: "center",
+      }}
+      className="relative container lg:mt-20 mt-16"
+    >
       <div className=" flex  flex-col items-center ">
-        <div className="text-white flex flex-col justify-center items-center lg:w-[695px] mx-auto w-full">
-          <h2>Contact Us</h2>
+        <div className="text-white flex flex-col justify-center items-center lg:w-[695px] gap-6 mx-auto w-full">
+          <h2 className="poppins">Contact Us</h2>
           <p>
             Montage Motion is an Advertising and Digital Agency specializing in
             Influencer Marketing, Video production & Post Production, Thumbnail
@@ -45,15 +51,15 @@ const ContactForm = () => {
         <div className="grid gap-5 md:gap-10 z-30 mt-[100px] grid-cols-1 lg:grid-cols-2">
           <div className="flex  flex-col gap-3 me-auto">
             <div className="flex   flex-col">
-              <h1 className="md:text-[32px] text-[24px]  font-[600] text-white uppercase">
+              <h2 className="md:text-[21px]  text-[18px] font-[600] text-white uppercase md:leading-[30px]">
                 Lets &nbsp; Work &nbsp;together
-              </h1>
+              </h2>
               <p className="text-[#E4E8F7] text-[16px]  mt-2 font-[400]">
                 Get attractive offers, let&apos;s create stuning works <br />{" "}
                 together . fill in your data and we will contact
               </p>
             </div>
-            <div className="flex  gap-3 mt-[37px] items-center">
+            <div className="flex  gap-3 mt-[40px] items-center">
               <Link
                 target="_blank"
                 href={"https://www.facebook.com/profile.php?id=61555719839132"}
@@ -103,7 +109,7 @@ const ContactForm = () => {
             </div>
           </div>
           <div>
-            <form action="" onSubmit={handalSubmit}>
+            <form onSubmit={handalSubmit}>
               <div>
                 <input
                   type="text"
@@ -123,7 +129,7 @@ const ContactForm = () => {
               <div className="mt-4">
                 <textarea
                   name="message"
-                  className="px-[32px] bg-[#58585833]  rounded-[8px] backdrop-blur-[160px]  text-white md:w-[530px] w-full h-[210px] py-4 focus:outline-none outline-none"
+                  className="px-[32px] bg-[#58585833]   rounded-[8px] backdrop-blur-[160px]  text-white md:w-[530px] w-full h-[210px] py-4 focus:outline-none outline-none"
                   placeholder="Type your message here"
                 />
               </div>
@@ -135,7 +141,7 @@ const ContactForm = () => {
                   />
                 </div>
                 <button
-                  className={`btn subscribe  px-6 py-2 rounded-[33px] text-white border-none transition duration-300 ${
+                  className={`bg-[#25AAE1] subscribe w-[101px] h-[56px] flex justify-center items-center  p-5 rounded-[33px] text-white border-none transition duration-300 ${
                     !valid
                       ? "cursor-not-allowed pointer-events-none"
                       : "cursor-pointer"
