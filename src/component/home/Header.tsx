@@ -1,9 +1,10 @@
 "use client";
 import React from "react";
 import ReactPlayer from "react-player";
-import useIntro from "@/hook/useIntro";
+
 import Link from "next/link";
 import Image from "next/image";
+import useIntro from "@/src/hook/useIntro";
 
 const Header = () => {
   const { data, isLoading } = useIntro();
@@ -11,8 +12,7 @@ const Header = () => {
     return <SkeletonLoader />;
   }
   const mainIntro = data?.find((data: any) => data.type === "talking");
-  console.log(mainIntro,"dokjasdlokfj");
-  console.log(data);
+
 
   return (
     <section className=" ">

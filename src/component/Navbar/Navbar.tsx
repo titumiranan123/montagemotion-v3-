@@ -5,31 +5,36 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import useService from "@/src/hook/useService";
+import { FaAngleDown } from "react-icons/fa";
+
+interface Service {
+  id: string;
+  href: string;
+  title: string;
+  description: string;
+  image: string;
+}
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const navLinks = [
-    { href: "/", title: "Home" },
-    { href: "/works", title: "Works" },
-    { href: "/services", title: "Services" },
-
-    { href: "/blogs", title: "Blogs" },
-    { href: "/about", title: "About" },
-    { href: "/contact", title: "Contact" },
-  ];
+  const path = usePathname();
+  const { data: servicesData, isLoading } = useService();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
   };
-  const { data: servicesData, isLoading } = useService();
+
+  const isServicesActive = servicesData?.some(
+    (data: Service) => path.startsWith(`${data.href}`)
+  ) 
+console.log(isServicesActive)
   return (
-    <header className=" ">
-      <div className="container mx-auto    py-4">
+    <header className="">
+      <div className="container mx-auto py-4">
         <nav className="flex justify-between items-center relative">
           {/* Logo */}
-          <Link href="/" className="flex items-center h-[80px]">
-            <div className="relative h-8 w-32 md:h-10 md:w-40">
+          <Link href="/" className="flex items-center ">
+            <div className="relative h-8  md:h-14 md:w-72">
               <Image
                 src="/assets/logo.svg"
                 alt="Company Logo"
@@ -41,47 +46,72 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center  ">
-            <div className="flex  justify-center rounded-xl bg-[#58585833] bg-opacity-50 backdrop-blur-md items-center p-2 text-[#DBDBDB] gap-5">
-              <Link href={"/"}>Home</Link>
-              <Link href={"/works"}>Works</Link>
-              <div className="group  bg-red-500 cursor-pointer py-2 px-4 rounded-md">
-                Services
-                <div className=" w-[1000px] absolute top-full -left-64 mt-1 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0 z-50">
-                  <div className="bg-white shadow-xl rounded-lg p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border border-gray-100">
-                    {servicesData?.map((service:any) => (
-                      <a
+          <div className="hidden lg:flex items-center">
+            <div className="flex justify-center rounded-xl bg-[#58585833] bg-opacity-50 py-3 px-6 backdrop-blur-md items-center p-2 text-[#DBDBDB] gap-5 z-50">
+              <Link href={"/"} className={`${path === "/" ? "font-bold active" : ""}`}>
+                Home
+              </Link>
+              <div className="group cursor-pointer  rounded-md">
+                <span style={{width:'105px', textAlign:'center'}} className={` flex items-center gap-2 ${isServicesActive ? "font-bold active" : ""}`}>
+                  Services <FaAngleDown className="mt-1" />
+                </span>
+                <div className="w-[1000px] absolute top-full -left-[215px] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-y-2 group-hover:-translate-y-1 z-50">
+                  <div className="bg-black shadow-xl rounded-lg p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border border-gray-100 text-white">
+                    {servicesData?.map((service: Service) => (
+                      <Link
                         key={service.id}
-                        href={service.href}
-                        className="flex items-start space-x-3 p-3 hover:bg-gray-50 rounded-lg transition-colors duration-200"
+                        href={`${service.href}`}
+                        className="flex items-start space-x-3 p-3 hover:bg-gray-50 hover:text-black rounded-lg transition-colors duration-200 z-50"
                       >
-                        <div className="flex-shrink-0">
-                          <img
+                        <div className="flex-shrink-0 relative w-8 h-8">
+                          <Image
                             src={service.image}
                             alt={service.title}
-                            className="w-8 h-8 object-cover rounded-md"
+                            fill
+                            className="object-cover rounded-md"
                           />
                         </div>
                         <div>
-                          <h3 className="text-sm text-gray-900">
-                            {service.title}
-                          </h3>
-                          <p className="text-sm text-gray-500 mt-1 line-clamp-2">
+                          <h3 className="text-sm">{service.title}</h3>
+                          <p className="text-sm mt-1 line-clamp-2">
                             {service.description}
                           </p>
                         </div>
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
               </div>
-              <Link href={"/blogs"}>Blogs</Link>
-              <Link href={"/about"}>About</Link>
-              <Link href={"/contact"}>Contact</Link>
+              <Link
+                className={`${path === "/about" ? "font-bold active" : ""}`}
+                href={"/about"}
+              >
+                About
+              </Link>
+              <Link
+              style={{width:'155px', textAlign:'center'}}
+                className={`${path === "/start-campaign" ? "font-bold active" : ""}`}
+                href={"/start-campaign"}
+              >
+                Start Campaign
+              </Link>
+              <Link
+                className={`${path === "/blogs" ? "font-bold active" : ""}`}
+                href={"/blogs"}
+              >
+                Blogs
+              </Link>
+              <Link
+                className={`${path === "/contact" ? "font-bold active" : ""}`}
+                href={"/contact"}
+              >
+                Contact
+              </Link>
             </div>
           </div>
+
           {/* Contact Info */}
-          <div className="hidden lg:flex  items-center gap-2 ">
+          <div className="hidden lg:flex items-center gap-2">
             <div className="relative w-8 h-8">
               <Image
                 src="/assets/Call Icon.png"
@@ -138,17 +168,50 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-[#1a1a1a] shadow-lg py-4 px-6 transition-all duration-300">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-[#1a1a1a] shadow-lg py-4 px-6 transition-all duration-300 z-50">
           <div className="flex flex-col space-y-3">
-            {navLinks.map((link) => (
-              <div key={link.href} onClick={toggleMobileMenu}>
-                <Link
-                  href={link.href}
-                  className="font-bold text-lg py-3"
-                  title={link.title}
-                />
-              </div>
-            ))}
+            <Link
+              href="/"
+              className={`font-bold text-lg py-3 ${path === "/" ? "text-white" : "text-gray-400"}`}
+              onClick={toggleMobileMenu}
+            >
+              Home
+            </Link>
+            <Link
+              href="/services"
+              className={`font-bold text-lg py-3 ${isServicesActive ? "text-white" : "text-gray-400"}`}
+              onClick={toggleMobileMenu}
+            >
+              Services
+            </Link>
+            <Link
+              href="/about"
+              className={`font-bold text-lg py-3 ${path === "/about" ? "text-white" : "text-gray-400"}`}
+              onClick={toggleMobileMenu}
+            >
+              About
+            </Link>
+            <Link
+              href="/start-campaign"
+              className={`font-bold text-lg py-3 ${path === "/start-campaign" ? "text-white" : "text-gray-400"}`}
+              onClick={toggleMobileMenu}
+            >
+              Start Campaign
+            </Link>
+            <Link
+              href="/blogs"
+              className={`font-bold text-lg py-3 ${path === "/blogs" ? "text-white" : "text-gray-400"}`}
+              onClick={toggleMobileMenu}
+            >
+              Blogs
+            </Link>
+            <Link
+              href="/contact"
+              className={`font-bold text-lg py-3 ${path === "/contact" ? "text-white" : "text-gray-400"}`}
+              onClick={toggleMobileMenu}
+            >
+              Contact
+            </Link>
           </div>
         </div>
       )}

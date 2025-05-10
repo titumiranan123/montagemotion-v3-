@@ -7,7 +7,9 @@ import useHomeApi from '@/src/hook/useHomeApi';
 import React from 'react';
 
 const AdvertisingService = () => {
-    const {data,isLoading} = useHomeApi()
+    const {data,isLoading} = useHomeApi('advertising')
+    // faqs
+    // testimonial
     return (
         <div className='header-background'>
             <HeaderService  isLoading={isLoading} mainIntro={data?.header} />

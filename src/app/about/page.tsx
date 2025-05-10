@@ -13,7 +13,7 @@ const Abouts = () => {
             backgroundRepeat: "no-repeat",
             backgroundPosition: "top",
   
-          }} className='mt-16 min-h-screen container'>
+          }} className='mt-16 lg:mt-30 min-h-screen container'>
             <Ourstorysection about={data?.about} />
             <MissionVission  />
             <OurTeam  members={data?.member}/>

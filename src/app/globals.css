@@ -4,12 +4,19 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+.active{
+  background: radial-gradient(70.66% 100% at 49.78% 100%, #CAF0FF 0%, #25AAE1 100%);
+  width: 83px;
+  height: 36px;
+  @apply flex justify-center items-center rounded-[8px] px-4 py-2 border border-[#78D5ED]
+
+}
 
 .header-background {
   background-image: url(/assets/logobackgourd.png);
   background-repeat: no-repeat;
   background-position: center -10px;
-  background-size: contain;
+  /* background-size: contain; */
 }
 
 @media (max-width: 768px) {
@@ -93,7 +100,9 @@
 }
 
 
-
+.z-50{
+  z-index: 99999  !important;
+}
 .swiper {
   height: 680px !important;
   width: 487px !important;

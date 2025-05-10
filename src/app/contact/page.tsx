@@ -35,7 +35,7 @@ const ContactForm = () => {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
       }}
-      className="relative container lg:mt-20 mt-16"
+      className="relative container lg:mt-20 mt-16 -z-10"
     >
       <div className=" flex  flex-col items-center ">
         <div className="text-white flex flex-col justify-center items-center lg:w-[695px] gap-6 mx-auto w-full">

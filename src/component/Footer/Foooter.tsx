@@ -8,7 +8,6 @@ const Footer = () => {
   const [email, setEmail] = useState("");
   const onSubmit = async (event: any) => {
     event.preventDefault();
-    console.log(event);
   };
 
   return (
