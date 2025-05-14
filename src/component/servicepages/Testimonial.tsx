@@ -46,10 +46,10 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
   return (
     <div className="container section px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col text-white mx-auto gap-3 md:gap-4">
-        <h2 className="w-full text-center mx-auto text-2xl sm:text-3xl md:text-4xl lg:text-5xl lg:max-w-[800px]">
+        <h2 className="w-full text-center ">
           {title}
         </h2>
-        <p className="text-center text-sm sm:text-base md:text-lg max-w-[90%] sm:max-w-[80%] md:max-w-[70%] lg:max-w-[60%] mx-auto">
+        <p className="text-center">
           {description}
         </p>
       </div>

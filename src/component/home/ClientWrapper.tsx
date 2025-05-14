@@ -7,6 +7,7 @@ import useHomeApi from "@/src/hook/useHomeApi";
 import HeaderService from "../servicepages/Header";
 import Faqservice from "../servicepages/ServiceFaq";
 import TestimonailSection from "@/src/component/servicepages/Testimonial";
+import Pricingsection from "../servicepages/Pricingsection";
 
 const ClientWraper = () => {
   const { data, isLoading } = useHomeApi("main");
@@ -27,6 +28,13 @@ const ClientWraper = () => {
         />
       )}
       <Faqservice items={data?.faqs} />
+      <Pricingsection
+        data={data?.pricing}
+        title={"Pricing"}
+        sub_title={
+          "Montage Motion is an Advertising and Digital Agency specializing in Influencer Marketing"
+        }
+      />
     </div>
   );
 };
