@@ -23,7 +23,7 @@ const Accordion: React.FC<accordionProp> = ({ items }) => {
       {items?.map((item, index) => (
         <div 
           key={index} 
-          className="text-white lg:w-[1000px] mx-auto bg-[#58585833] rounded-[18px] overflow-hidden"
+          className="text-white lg:max-w-[996px] mx-auto bg-[#58585833] rounded-[18px] overflow-hidden"
         >
           <div
             className="cursor-pointer p-6 flex justify-between items-center"

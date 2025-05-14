@@ -4,12 +4,14 @@
   --background: #ffffff;
   --foreground: #171717;
 }
-.active{
-  background: radial-gradient(70.66% 100% at 49.78% 100%, #CAF0FF 0%, #25AAE1 100%);
-  width: 83px;
-  height: 36px;
-  @apply flex justify-center items-center rounded-[8px] px-4 py-2 border border-[#78D5ED]
-
+.active {
+  background: radial-gradient(
+    70.66% 100% at 49.78% 100%,
+    #caf0ff 0%,
+    #25aae1 100%
+  );
+ 
+  @apply flex justify-center items-center rounded-[8px] px-3 py-[6px] border border-[#78D5ED];
 }
 
 .header-background {
@@ -45,11 +47,15 @@
   left: 35%;
   transition: top 0.5s ease;
 }
-
-.swiper-slide{
-  height: 600px !important;
-  overflow: hidden;
+.testimonial-swiper-text {
+  width: 100% !important;
+  height: 300px !important;
 }
+.testimonial-swiper-video {
+  width: 100% !important;
+  height: 630px !important;
+}
+
 
 @layer base {
   h1 {
@@ -77,11 +83,11 @@
   }
 }
 @layer components {
-  .poppins{
+  .poppins {
     font-family: var(--font-poppins) !important;
   }
   .container {
-    @apply max-w-[1440px] mx-auto lg:px-[160px] px-2;
+    @apply max-w-[1440px] mx-auto lg:px-[222px] px-2;
   }
   .section {
     @apply lg:mt-[120px] mt-16;
@@ -99,11 +105,10 @@
   }
 }
 
-
-.z-50{
-  z-index: 99999  !important;
+.z-50 {
+  z-index: 99999 !important;
 }
-.swiper {
+.shortVideo {
   height: 680px !important;
   width: 487px !important;
 }
@@ -111,59 +116,38 @@
 :root {
   --swiper-navigation-size: 32px !important;
 }
-.swipers {
-  height: 858px !important;
-  width: 100% !important;
-  margin: 0 auto;
-}
-.swipers .swiper-button-prev {
-  background: white !important;
-  border-radius: 50% !important;
-  width: 50px !important;
-  height: 50px !important;
-}
-.swipers .swiper-button-next {
-  background: white !important;
-  border-radius: 50% !important;
-  width: 50px !important;
-  height: 50px !important;
-}
-.swipers .swiper-pagination .swiper-pagination-bullet {
-  background: white;
-  width: 20px !important;
-}
-.swipers
-  .swiper-pagination
-  .swiper-pagination-bullet
-  .swiper-pagination-bullet-active {
-  background: rgb(240, 86, 86) !important;
-  width: 20px !important;
-}
 
-/* Default for larger screens */
+.shortVideo .swiper-button-prev {
+  background: white !important;
+  border-radius: 50% !important;
+  width: 50px !important;
+  height: 50px !important;
+}
+.shortVideo .swiper-button-next {
+  background: white !important;
+  border-radius: 50% !important;
+  width: 50px !important;
+  height: 50px !important;
+}
 
 /* Adjust for mobile devices */
 @media (max-width: 640px) {
-  .swiper {
+  .shortVideo {
     height: 540px !important;
     width: 300px !important;
   }
-  .swipers {
-    height: 698px !important;
-  }
+  .header-background {
+  background-position: center 90px;
+}
+
 }
 @media (min-width: 641px) and (max-width: 820px) {
-  .swiper {
+  .shortVideo {
     height: 680px !important;
     width: 487px !important;
   }
-  .swipers {
-    height: 818px !important;
-    width: 600px !important;
-    margin: 0 auto;
-  }
 }
-
+/* for shorts */
 .swiper-button-prev-custom,
 .swiper-button-next-custom {
   width: 44px;
@@ -171,42 +155,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000000;
+  background: #58585833;
   border-radius: 50%;
-  border: 1px solid #ffffff;
+  border: 1px solid #58585833;
+  backdrop-filter: blur(20px);
   color: #ffffff;
-  /* Color of the icon */
   font-size: 20px;
-  /* Size of the icon */
   cursor: pointer;
   z-index: 10;
 }
 
 .swiper-button-prev-custom {
-  left: 425px;
+  left: 346px;
   rotate: 90deg;
-  /* Position the previous button */
 }
-
 .swiper-button-next-custom {
   right: -68px;
-  /* Position the next button */
   rotate: 90deg;
+  
 }
+.swiper-button-disabled {
+
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
 
 /* Adjustments for mobile screens */
 @media (max-width: 640px) {
   .swiper-button-prev-custom {
-    left: 256px;
-    /* Adjust the position for mobile screens */
+    left: 286px;
     font-size: 18px;
-    /* Slightly smaller icon size */
   }
 
   .swiper-button-next-custom {
-    right: 0px;
-    /* Adjust the position for mobile screens */
+    right: -30px;
     font-size: 18px;
-    /* Slightly smaller icon size */
   }
 }

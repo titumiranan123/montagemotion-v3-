@@ -19,8 +19,10 @@ const Worksection: React.FC<WorksectionProps> = ({
   data,
   isLoading,
 }) => {
+  const [seeCount, setSeeCount] = React.useState(4);
+ 
   return (
-    <div className="container section px-4 sm:px-6 lg:px-8">
+    <div className="container h-auto   section px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col text-white mx-auto gap-3 md:gap-4">
         <h2 className="w-full text-center mx-auto text-2xl sm:text-3xl md:text-4xl lg:text-5xl lg:max-w-[800px]">
           {title}
@@ -29,17 +31,22 @@ const Worksection: React.FC<WorksectionProps> = ({
           {description}
         </p>
       </div>
-      
+
       {isLoading ? (
         <div className="flex justify-center items-center mt-16">
           {/* You can add a loading spinner here if needed */}
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 max-w-full sm:max-w-2xl md:max-w-4xl lg:max-w-[998px] mx-auto gap-4 md:gap-6 mt-8 sm:mt-12 md:mt-16">
-          {data?.map((work: IWork, idx: number) => (
-            <ServiceFullLengthcard work={work} key={idx} />
-          ))}
-        </div>
+        <>
+          <div className="grid grid-cols-1 sm:grid-cols-2 max-w-full sm:max-w-2xl md:max-w-4xl lg:max-w-[998px] mx-auto gap-4 md:gap-6 mt-8 sm:mt-12 md:mt-16 ">
+            {data?.slice(0,seeCount).map((work: IWork, idx: number) => (
+              <ServiceFullLengthcard work={work} key={idx} />
+            ))}
+          </div>
+        { data?.length > 4 && <div>
+            <button className="text-white bg-green-600 py-2 px-4 rounded-[20px]" onClick={()=>setSeeCount(seeCount+4)}>See More</button>
+          </div>}
+        </>
       )}
     </div>
   );

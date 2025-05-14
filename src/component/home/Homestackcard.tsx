@@ -1,79 +1,84 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import ServiceFullLengthcard from "../servicepages/ServiceFullLengthcard";
-import useHomeApi from "@/src/hook/useHomeApi";
+import React, { useRef } from "react";
+import { useScroll, useSpring } from "framer-motion";
+import Stackcard from "./Stackcard";
 
-// Register the plugin
-gsap.registerPlugin(ScrollTrigger);
+interface WorkItem {
+  id: number;
+  thumbnail: string;
+  video_link: string;
+}
 
-const CardStackScroller = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<HTMLDivElement[]>([]);
-  const { data, isLoading } = useHomeApi();
+const Homestackcardsection = ({data,isLoading}:any) => {
+console.log(data,"asdfoijasdpokfjka'dsfjlksadjfasdfkl")
+  const containerRef = useRef(null);
 
-  useEffect(() => {
-    if (!data?.works?.length) return;
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
 
-    // Set initial state of cards, hide them except for the first one
-    gsap.set(cardRefs.current.slice(1), {
-      opacity: 0,
-      y: 50,
-    });
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 20%",
-        end: "+=1500", 
-        scrub: 1, // Sync with scroll
-        pin: true, // Pin the section
-        anticipatePin: 1,
-      },
-    });
-
-    // Animate each card one by one, change opacity and y-position
-    cardRefs.current.slice(1).forEach((card) => {
-      tl.to(card, {
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-        ease: "power2.out",
-      });
-    });
-
-    // Recalculate layout after the content loads
-    ScrollTrigger.refresh();
-    // Cleanup scroll triggers on component unmount
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
-  }, [data]);
+  const smoothScroll = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    mass: 1,
+  });
 
   if (isLoading) {
-    return <div className="text-white text-center mt-10">Loading...</div>;
+    return (
+      <div className="relative flex flex-col items-center justify-center w-full min-h-[200vh] px-4">
+        {[...Array(4)].map((_, i) => (
+          <SkeletonCard key={i} />
+        ))}
+      </div>
+    );
   }
 
+  const works: WorkItem[] = data || [];
+
   return (
-    <section
+    <>
+    <div className="flex section container flex-col text-white  mx-auto gap-4">
+        <h2 className="lg:w-[800px] text-center mx-auto">Full-form Video</h2>
+        <p className="text-center">
+          Montage Motion is an Advertising and Digital Agency speciallzing in
+          InFluencer Marketing
+        </p>
+      </div>
+    <div
       ref={containerRef}
-      className="relative h-screen w-full overflow-hidden "
+      className="relative max-w-[1200px] mx-auto mt-10 lg:mt-16  flex flex-col items-center justify-center   px-4"
     >
-      {data?.works?.map((item: any, i: number) => (
-        <div
-          key={i}
-          ref={(el) => {
-            if (el) cardRefs.current[i] = el;
-          }}
-          className="absolute top-[20%] left-[30%] w-[600px] h-[250px]"
-        >
-          <ServiceFullLengthcard work={item} />
-        </div>
-      ))}
-    </section>
+      
+      {works.map((item, i) => {
+        // Dynamic scaling range for each card based on its index
+        const rangeStart = works.length;
+        const rangeEnd = (i + 0.1) / works.length;
+        return (
+          <Stackcard
+            key={item.id}
+            url={item.video_link}
+            image={item.thumbnail}
+            index={i}
+            scrollProgress={smoothScroll}
+            range={[rangeStart, rangeEnd]}
+          />
+        );
+      })}
+    </div>
+    </>
   );
 };
 
-export default CardStackScroller;
+const SkeletonCard = () => {
+  return (
+    <div className="sticky flex items-center justify-center w-full h-screen pointer-events-none">
+      <div className="w-full max-w-[650px] h-[365px] bg-gray-200 animate-pulse rounded-xl shadow-xl pointer-events-auto border border-gray-300">
+        <div className="w-full h-full bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-shimmer rounded-xl" />
+      </div>
+    </div>
+  );
+};
+
+export default Homestackcardsection;

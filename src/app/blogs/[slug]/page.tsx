@@ -7,7 +7,6 @@ import React from 'react';
 const SingleBlog = () => {
     const param = useParams()
 const {data} = useBlogSingle(param?.slug  as string)
-console.log(data,param)
     return (
         <div className='max-w-[964px] min-h-screen mx-auto flex flex-col justify-center items-center mt-20 lg:mt-30'>
             <div>

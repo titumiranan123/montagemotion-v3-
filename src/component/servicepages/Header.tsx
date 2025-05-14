@@ -23,45 +23,45 @@ interface HeaderServiceProps {
 const HeaderService: React.FC<HeaderServiceProps> = ({
   mainIntro,
   isLoading,
-}) => {
+}) => { 
   if (isLoading) {
     return <SkeletonLoader />;
   }
 
   return (
-    <section className="lg:py-16 px-4 md:px-6">
-    <div className="relative w-full ">
-      <div className="max-w-[800px] pt-16 lg:pt-[160px] mx-auto text-center md:text-left">
-        <h1 className="text-[#d8d6d6] poppins uppercase text-[24px] sm:text-[32px] md:text-[45px] lg:text-[64px] font-bold leading-tight md:leading-[72px] text-center">
-          {mainIntro?.title}
-        </h1>
-  
-        <p className="text-[#E4E8F7] text-[14px] sm:text-[16px] font-[400] mt-6">
-          {mainIntro?.description}
-        </p>
-  
-        <div className="flex flex-col md:flex-row justify-center md:justify-center items-center gap-4 mt-10 md:mt-16">
-          <Link
-            href="/works"
-            className="flex justify-center items-center gap-3 font-bold text-[16px] py-4 px-7 w-full sm:w-[246px] md:w-[200px] rounded-[30px] border border-white text-white hover:border-none headerbtn"
-          >
-            Our Works
-          </Link>
-  
-          <Link
-            href="https://calendly.com/imonofficial2/30min?month=2024-07"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex justify-center items-center gap-3 font-bold text-[16px] py-4 px-7 w-full sm:w-[246px] md:w-[200px] rounded-[30px] border border-white text-white hover:border-none headerbtn"
-          >
-            Book a Schedule
-          </Link>
+    <section className="">
+      <div className="relative w-full ">
+        <div className="max-w-[800px] pt-16 lg:pt-[138px] mx-auto text-center md:text-left">
+          <h1 className="text-[#d8d6d6] poppins uppercase text-[24px] sm:text-[32px] md:text-[45px] lg:text-[64px] font-bold leading-tight md:leading-[72px] text-center">
+            {mainIntro?.title}
+          </h1>
+
+          <p className="text-[#E4E8F7] text-[14px] sm:text-[16px] font-[400] mt-6">
+            {mainIntro?.description}
+          </p>
+
+          <div className="flex flex-col md:flex-row justify-center md:justify-center items-center gap-4 mt-10 md:mt-16">
+            <Link
+              href="/works"
+              className="flex justify-center items-center gap-3 font-bold text-[16px] py-4 px-7 w-full sm:w-[246px] md:w-[200px] rounded-[30px] border border-white text-white hover:border-none headerbtn"
+            >
+              Our Works
+            </Link>
+
+            <Link
+              href="https://calendly.com/imonofficial2/30min?month=2024-07"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center items-center gap-3 font-bold text-[16px] py-4 px-7 w-full sm:w-[246px] md:w-[200px] rounded-[30px] border border-white text-white hover:border-none headerbtn"
+            >
+              Book a Schedule
+            </Link>
+          </div>
         </div>
-      </div>
-  
-      {/* Responsive Video Section */}
-      <div className="mx-auto mt-12 rounded-[39px] overflow-hidden w-full max-w-[794px] aspect-video">
-        <div className="relative w-full h-full bg-black">
+
+        {/* Responsive Video Section */}
+
+        <div className="relative lg:w-[794px] mx-auto lg:h-[444px] w-full h-full aspect-video bg-black overhidden rounded-[39px] mt-24">
           <ReactPlayer
             url={mainIntro?.video_link}
             playing={false}
@@ -84,47 +84,46 @@ const HeaderService: React.FC<HeaderServiceProps> = ({
                   modestbranding: 1,
                   showinfo: 0,
                   rel: 0,
-                  controls: 0,
                   fs: 0,
                 },
               },
             }}
-            className="absolute top-0 left-0"
           />
         </div>
       </div>
-    </div>
-  </section>
-  
+    </section>
   );
 };
 
 const SkeletonLoader = () => {
   return (
-    <section className="section container w-full pt-[14px]">
-      <div className="relative w-full overflow-hidden">
-        <div className="max-w-[800px] mx-auto px-4">
+    <section className="">
+      <div className="relative w-full">
+        <div className="max-w-[800px] pt-16 lg:pt-[138px] mx-auto text-center md:text-left ">
           {/* Title Skeleton */}
-          <div className="h-8 md:h-12 lg:h-16 w-3/4 mx-auto bg-gray-300 rounded animate-pulse"></div>
+          <div className="flex flex-col items-center">
+
+          <div className="h-8 sm:h-10 md:h-12 lg:h-16 w-3/4 mx-auto md:mx-0 bg-gray-300 dark:bg-gray-700 rounded animate-pulse"></div>
+          </div>
 
           {/* Description Skeleton */}
-          <div className="mt-6 space-y-2">
-            <div className="h-4 w-full bg-gray-300 rounded animate-pulse"></div>
-            <div className="h-4 w-5/6 bg-gray-300 rounded animate-pulse"></div>
-            <div className="h-4 w-4/6 bg-gray-300 rounded animate-pulse"></div>
+          <div className="mt-6 space-y-2 flex flex-col ">
+            <div className="h-4 w-full bg-gray-300 dark:bg-gray-700 rounded animate-pulse"></div>
+            <div className="h-4 w-5/6 bg-gray-300 dark:bg-gray-700 rounded animate-pulse"></div>
+            <div className="h-4 w-4/6 bg-gray-300 dark:bg-gray-700 rounded animate-pulse"></div>
           </div>
 
           {/* Buttons Skeleton */}
-          <div className="flex justify-center flex-col md:flex-row items-center gap-4 mt-10 md:mt-16 mb-6">
-            <div className="h-12 w-48 bg-gray-300 rounded-full animate-pulse"></div>
-            <div className="h-12 w-48 bg-gray-300 rounded-full animate-pulse"></div>
+          <div className="flex flex-col md:flex-row justify-center md:justify-center items-center gap-4 mt-10 md:mt-16">
+            <div className="h-12 w-full sm:w-[246px] md:w-[200px] bg-gray-300 dark:bg-gray-700 rounded-[30px] animate-pulse"></div>
+            <div className="h-12 w-full sm:w-[246px] md:w-[200px] bg-gray-300 dark:bg-gray-700 rounded-[30px] animate-pulse"></div>
           </div>
         </div>
 
-        {/* Video Thumbnail Skeleton */}
-        <div className="mx-auto mt-24 rounded-xl overflow-hidden lg:w-[996px] lg:h-[561px] md:h-[400px] h-[210px] w-full bg-gray-300 animate-pulse">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="h-20 w-20 bg-gray-400 rounded-full animate-pulse"></div>
+        {/* Video Section Skeleton */}
+        <div className="lg:w-[794px] mx-auto lg:h-[444px] w-full h-full aspect-video bg-gray-300 dark:bg-gray-700 rounded-[39px] mt-24 animate-pulse">
+          <div className="flex items-center justify-center h-full">
+            <div className="w-20 h-20 bg-gray-400 dark:bg-gray-600 rounded-full animate-pulse"></div>
           </div>
         </div>
       </div>

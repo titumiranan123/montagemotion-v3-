@@ -24,39 +24,45 @@ const Navbar = () => {
     setIsMobileMenuOpen((prev) => !prev);
   };
 
-  const isServicesActive = servicesData?.some(
-    (data: Service) => path.startsWith(`${data.href}`)
-  ) 
-console.log(isServicesActive)
+  const isServicesActive = servicesData?.some((data: Service) =>
+    path.startsWith(`${data.href}`)
+  );
   return (
-    <header className="">
-      <div className="container mx-auto py-4">
+    <header className="lg:mt-[32px]">
+      <div className="max-w-[996px] mx-auto py-4">
         <nav className="flex justify-between items-center relative">
           {/* Logo */}
-          <Link href="/" className="flex items-center ">
-            <div className="relative h-8  md:h-14 md:w-72">
+            <Link href="/" className="block  h-auto  md:h-14 md:w-[151px]   ">
               <Image
                 src="/assets/logo.svg"
                 alt="Company Logo"
-                fill
-                className="object-contain"
+                width={151}
+                height={56}
                 priority
               />
-            </div>
-          </Link>
+            </Link>
+      
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center">
-            <div className="flex justify-center rounded-xl bg-[#58585833] bg-opacity-50 py-3 px-6 backdrop-blur-md items-center p-2 text-[#DBDBDB] gap-5 z-50">
-              <Link href={"/"} className={`${path === "/" ? "font-bold active" : ""}`}>
+          <div className="hidden max-w-[565px] w-full mx-auto lg:flex items-center">
+            <div className="flex justify-center rounded-xl bg-[#58585833] bg-opacity-50 py-3 px-6 backdrop-blur-md items-center  text-[#DBDBDB] gap-4 z-50">
+              <Link
+                href={"/"}
+                className={`${path === "/" ? "font-bold active" : ""}`}
+              >
                 Home
               </Link>
               <div className="group cursor-pointer  rounded-md">
-                <span style={{width:'105px', textAlign:'center'}} className={` flex items-center gap-2 ${isServicesActive ? "font-bold active" : ""}`}>
-                  Services <FaAngleDown className="mt-1" />
+                <span
+                  style={{ width: "82px", textAlign: "center" }}
+                  className={` flex items-center gap-2 ${
+                    isServicesActive ? "font-bold active" : ""
+                  }`}
+                >
+                  Services <FaAngleDown className="mt-1 w-4 h-4" />
                 </span>
-                <div className="w-[1000px] absolute top-full -left-[215px] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-y-2 group-hover:-translate-y-1 z-50">
-                  <div className="bg-black shadow-xl rounded-lg p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border border-gray-100 text-white">
+                <div className="w-[900px]  absolute  top-full -left-[185px] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 ease-in-out transform translate-y-2 group-hover:-translate-y-1 z-50">
+                  <div className="bg-black shadow-xl rounded-lg p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border border-slate-500 text-white">
                     {servicesData?.map((service: Service) => (
                       <Link
                         key={service.id}
@@ -89,8 +95,10 @@ console.log(isServicesActive)
                 About
               </Link>
               <Link
-              style={{width:'155px', textAlign:'center'}}
-                className={`${path === "/start-campaign" ? "font-bold active" : ""}`}
+                style={{ textAlign: "center" }}
+                className={`w-[110px] ${
+                  path === "/start-campaign" ? "font-bold active w-[160px]" : ""
+                }`}
                 href={"/start-campaign"}
               >
                 Start Campaign
@@ -112,17 +120,13 @@ console.log(isServicesActive)
 
           {/* Contact Info */}
           <div className="hidden lg:flex items-center gap-2">
-            <div className="relative w-8 h-8">
-              <Image
-                src="/assets/Call Icon.png"
-                alt="call"
-                fill
-                className="object-contain"
-              />
-            </div>
-            <p className="text-[#DBDBDB] text-sm font-medium hidden xl:block">
-              +8801786546949
-            </p>
+            <Link
+            style={{padding: "10px 20px"}}
+              href="/contact"
+              className="bg-[#F9F9F9] text-white font-[600]  md:w-[131px] h-[56px] w-full text-[16px]  rounded-lg hover:bg-gray-200 transition duration-300 active "
+            >
+              Contact Us
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -168,46 +172,58 @@ console.log(isServicesActive)
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-[#1a1a1a] shadow-lg py-4 px-6 transition-all duration-300 z-50">
+        <div className="lg:hidden absolute top-0 bg-[blue-500] left-0 w-full  shadow-lg py-4 px-6 transition-all duration-300 z-50">
           <div className="flex flex-col space-y-3">
             <Link
               href="/"
-              className={`font-bold text-lg py-3 ${path === "/" ? "text-white" : "text-gray-400"}`}
+              className={`font-bold text-lg py-3 ${
+                path === "/" ? "text-white" : "text-gray-400"
+              }`}
               onClick={toggleMobileMenu}
             >
               Home
             </Link>
             <Link
               href="/services"
-              className={`font-bold text-lg py-3 ${isServicesActive ? "text-white" : "text-gray-400"}`}
+              className={`font-bold text-lg py-3 ${
+                isServicesActive ? "text-white" : "text-gray-400"
+              }`}
               onClick={toggleMobileMenu}
             >
               Services
             </Link>
             <Link
               href="/about"
-              className={`font-bold text-lg py-3 ${path === "/about" ? "text-white" : "text-gray-400"}`}
+              className={`font-bold text-lg py-3 ${
+                path === "/about" ? "text-white" : "text-gray-400"
+              }`}
               onClick={toggleMobileMenu}
             >
               About
             </Link>
             <Link
               href="/start-campaign"
-              className={`font-bold text-lg py-3 ${path === "/start-campaign" ? "text-white" : "text-gray-400"}`}
+              className={`font-bold text-lg py-3 ${
+                path === "/start-campaign" ? "text-white" : "text-gray-400"
+              }`}
               onClick={toggleMobileMenu}
             >
               Start Campaign
             </Link>
             <Link
               href="/blogs"
-              className={`font-bold text-lg py-3 ${path === "/blogs" ? "text-white" : "text-gray-400"}`}
+              className={`font-bold text-lg py-3 ${
+                path === "/blogs" ? "text-white" : "text-gray-400"
+              }`}
               onClick={toggleMobileMenu}
             >
               Blogs
             </Link>
             <Link
               href="/contact"
-              className={`font-bold text-lg py-3 ${path === "/contact" ? "text-white" : "text-gray-400"}`}
+              className={`font-bold text-lg py-3 ${
+                path === "/contact" ? "text-white" : "text-gray-400"
+              }`}
               onClick={toggleMobileMenu}
             >
               Contact
