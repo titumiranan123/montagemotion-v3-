@@ -14,7 +14,7 @@ const MissionVission = () => {
         }
     ]
     return (
-        <div className='max-w-[1000px] mx-auto section flex justify-around items-center '>
+        <div className='max-w-[1000px] mx-auto section flex lg:flex-row flex-col gap-5 justify-around items-center '>
             {
                 item.map((item:{title:string,description:string},idx:number)=>(
                     <Card key={idx} title={item.title} description={item.description} />

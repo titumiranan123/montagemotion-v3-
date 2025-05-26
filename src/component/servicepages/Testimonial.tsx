@@ -62,7 +62,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
         <div className="max-w-[970px] w-full mx-auto mt-8">
           {data && data.length > 0 ? (
             <div>
-              <Swiper
+             {video_message?.length > 0 && <Swiper
                 slidesPerView={1}
                 spaceBetween={20}
                 freeMode={false}
@@ -108,8 +108,8 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
                     </SwiperSlide>
                   )
                 )}
-              </Swiper>
-              <Swiper
+              </Swiper>}
+             {messageTesti?.length > 0 && <Swiper
                 slidesPerView={1}
                 spaceBetween={20}
                 freeMode={false}
@@ -154,7 +154,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
                     />
                   </SwiperSlide>
                 ))}
-              </Swiper>
+              </Swiper>}
             </div>
           ) : (
             <div className="text-center text-white mt-8">

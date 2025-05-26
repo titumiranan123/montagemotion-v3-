@@ -3,7 +3,7 @@ import HeaderService from "@/src/component/servicepages/Header";
 import Faqservice from "@/src/component/servicepages/ServiceFaq";
 import TestimonailSection from "@/src/component/servicepages/Testimonial";
 import ThumbnailWorksection from "@/src/component/servicepages/ThumbnailWorksection";
-import Worksection from "@/src/component/servicepages/Worksection";
+
 import useHomeApi from "@/src/hook/useHomeApi";
 
 const CustomWebsite = () => {
@@ -16,7 +16,7 @@ const CustomWebsite = () => {
     ) || [];
 
   return (
-    <div className="header-background">
+    <div className="header-background px-4 lg:px-0">
       <HeaderService isLoading={isLoading} mainIntro={data?.header} />
 
       {ui_ux?.length > 0 && (

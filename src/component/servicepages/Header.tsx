@@ -40,7 +40,7 @@ const HeaderService: React.FC<HeaderServiceProps> = ({
             {mainIntro?.description}
           </p>
 
-          <div className="flex flex-col md:flex-row justify-center md:justify-center items-center gap-4 mt-10 md:mt-16">
+          <div className="flex flex-col md:flex-row justify-center md:justify-center items-center gap-4  md:mt-16 mt-10">
             <Link
               href="/works"
               className="flex justify-center items-center gap-3 font-bold text-[16px] py-4 px-7 w-full sm:w-[246px] md:w-[200px] rounded-[30px] border border-white text-white hover:border-none headerbtn"
@@ -61,7 +61,7 @@ const HeaderService: React.FC<HeaderServiceProps> = ({
 
         {/* Responsive Video Section */}
 
-        <div className="relative lg:w-[794px] mx-auto lg:h-[444px] w-full h-full aspect-video bg-black overhidden rounded-[39px] mt-24">
+        <div className="relative lg:w-[794px] mx-auto lg:h-[444px] w-full h-full aspect-video bg-black overhidden rounded-[39px] mt-10 lg:mt-24">
           <ReactPlayer
             url={mainIntro?.video_link}
             playing={false}

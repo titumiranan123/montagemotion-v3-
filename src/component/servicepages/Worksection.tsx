@@ -19,6 +19,9 @@ const Worksection: React.FC<WorksectionProps> = ({
   data,
   isLoading,
 }) => {
+  if (!data || data.length === 0) {
+    return null; 
+  }
   const [seeCount, setSeeCount] = React.useState(4);
  
   return (

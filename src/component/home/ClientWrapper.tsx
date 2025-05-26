@@ -12,7 +12,7 @@ import useSmoothScroll from "../useSmoothScroll";
 
 const ClientWraper = () => {
   const { data, isLoading } = useHomeApi("main");
-  console.log(data)
+  
   useSmoothScroll()
   return (
     <div className="header-background container">

@@ -38,6 +38,9 @@ const Pricingsection = ({
   title: string;
   sub_title: string;
 }) => {
+  if (!data || data.length === 0) {
+    return null; // Return null if no data is available
+  }
   const single = data?.filter((item) => item.pricing_type === "single");
   return (
     <div className="section  max-w-[996px]  w-full mx-auto ">

@@ -9,6 +9,9 @@ interface Member {
 }
 
 const OurTeam: React.FC<Member> = ({ members }) => {
+  if(members && members.length === 0) {
+    return null
+  }
   return (
     <div className="max-w-[1000px] mx-auto section">
       <div className="flex  flex-col text-white  mx-auto gap-4">
