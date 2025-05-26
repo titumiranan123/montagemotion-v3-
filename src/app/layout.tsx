@@ -4,6 +4,7 @@ import "./globals.css";
 import Provider from "../provider/Provider";
 import Navbar from "../component/Navbar/Navbar";
 import Footer from "../component/Footer/Foooter";
+import RippleCursor from "../component/Cursor";
 
 const monserrat = Montserrat({
   variable: "--font-montserrat",
@@ -36,6 +37,7 @@ export default function RootLayout({
           <Footer />
         </Provider>
       </body>
+      <RippleCursor />
     </html>
   );
 }

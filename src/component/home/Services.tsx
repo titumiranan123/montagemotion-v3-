@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import Servicecard from "./Servicecard";
-import useService from "@/hook/useService";
+import useService from "@/src/hook/useService";
 
 const Services = () => {
   const { data, isLoading } = useService();

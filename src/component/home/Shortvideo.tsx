@@ -30,7 +30,7 @@ const Shortvideo: React.FC = () => {
   return (
     <div className="flex  section lg:flex-nowrap flex-wrap justify-between max-w-[996px]  overflow-hidden mx-auto  ">
       <div className=" lg:w-1/2 w-full flex justify-start flex-col">
-        <h2 className="bg-clip-text text-transparent bg-gradient-to-r from-[#FFFFFF] to-[#25AAE1] poppins font-bold md:text-[64px] text-left md:leading-[64px] leading-[32px] text-[28px] w-full">
+        <h2 className="bg-clip-text text-transparent bg-gradient-to-r from-[#FFFFFF] to-[#25AAE1] poppins font-bold  text-left ">
           OUR RECENT PROJECT
         </h2>
         <p className="mt-[14px] md:mt-[34px] ptag text-[#D9D9D9] md:w-[505px] ">

@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+#fluid {
+  pointer-events: none !important;
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;

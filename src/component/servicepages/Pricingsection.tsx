@@ -38,7 +38,7 @@ const Pricingsection = ({
   title: string;
   sub_title: string;
 }) => {
-  const single = data.filter((item) => item.pricing_type === "single");
+  const single = data?.filter((item) => item.pricing_type === "single");
   return (
     <div className="section  max-w-[996px]  w-full mx-auto ">
       <div className="flex  flex-col text-white  mx-auto lg:gap-4 gap-2">

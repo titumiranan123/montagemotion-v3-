@@ -8,9 +8,12 @@ import HeaderService from "../servicepages/Header";
 import Faqservice from "../servicepages/ServiceFaq";
 import TestimonailSection from "@/src/component/servicepages/Testimonial";
 import Pricingsection from "../servicepages/Pricingsection";
+import useSmoothScroll from "../useSmoothScroll";
 
 const ClientWraper = () => {
   const { data, isLoading } = useHomeApi("main");
+  console.log(data)
+  useSmoothScroll()
   return (
     <div className="header-background container">
       <HeaderService isLoading={isLoading} mainIntro={data?.header} />
