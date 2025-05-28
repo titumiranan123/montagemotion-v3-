@@ -11,7 +11,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="max-w-[996px] mx-auto w-full section  pt-10 pb-4  ">
+    <footer className="max-w-[996px] mx-auto w-full section  pt-10 pb-4 overflow-hidden px-2 lg:px-0">
       {/* Main Footer Content */}
       <div className="grid grid-cols-1 gap-8 pb-10 sm:grid-cols-2 lg:grid-cols-4">
         {/* Logo and Newsletter */}
@@ -28,7 +28,7 @@ const Footer = () => {
           </p>
           <form
             onSubmit={onSubmit}
-            className="flex flex-col mt-4 lg:mt-8 sm:flex-row w-full max-w-[350px] h-[58px] p-2 rounded-[16px] bg-[#585858] gap-2 items-center"
+            className="flex flex-col mt-4 lg:mt-8 sm:flex-row w-full max-w-[310px] h-[58px] p-2 rounded-[16px] bg-[#585858] gap-2 items-center"
           >
             <input
               type="email"

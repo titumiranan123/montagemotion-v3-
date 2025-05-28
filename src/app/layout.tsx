@@ -29,15 +29,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${monserrat.variable} ${opensans.variable} bg-black`}
+        className={`${poppins.variable} ${monserrat.variable} ${opensans.variable} bg-black `}
       >
         <Provider>
           <Navbar />
           {children}
           <Footer />
         </Provider>
+        <RippleCursor />
       </body>
-      <RippleCursor />
     </html>
   );
 }

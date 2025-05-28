@@ -197,12 +197,12 @@
 /* Adjustments for mobile screens */
 @media (max-width: 640px) {
   .swiper-button-prev-custom {
-    left: 286px;
+    left: 276px;
     font-size: 18px;
   }
 
   .swiper-button-next-custom {
-    right: -30px;
+    right: -20px;
     font-size: 18px;
   }
 }

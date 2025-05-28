@@ -46,7 +46,7 @@ const Shortvideo: React.FC = () => {
           Get Your Shorts Edited
         </Link>
       </div>
-      <div className="lg:w-1/2 w-full">
+      <div className="lg:w-1/2 w-full lg:mt-0 mt-10">
         <div className="md:w-[322px]  mx-auto w-[300px]  relative">
           <SwiperComponent
             direction="vertical"
@@ -99,7 +99,7 @@ const Shortvideo: React.FC = () => {
           <div className="swiper-button-prev-custom absolute top-[45%] -left-20  transform -translate-y-1/2 z-10">
             <FaArrowLeft />
           </div>
-          <div className="swiper-button-next-custom absolute top-[55%] -right-2 transform -translate-y-1/2 z-10">
+          <div className="swiper-button-next-custom absolute top-[55%] lg:-right-2 right-4 transform -translate-y-1/2 z-10">
             <FaArrowRight />
           </div>
         </div>

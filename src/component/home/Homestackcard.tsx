@@ -47,7 +47,7 @@ const Homestackcardsection = ({ data, isLoading }: any) => {
       </div>
       <div
         ref={containerRef}
-        className="relative max-w-[1200px] mx-auto mt-10 lg:mt-16  flex flex-col items-center justify-center   px-4"
+        className="relative max-w-[1200px] mx-auto mt-10 lg:mt-16  flex flex-col items-center justify-center md:px-5   px-6"
       >
         {works.map((item, i) => {
           const rangeStart = works.length;

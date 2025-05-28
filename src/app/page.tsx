@@ -27,7 +27,7 @@ export const metadata = {
 };
 export default function Home() {
   return (
-  <div  className="lg:px-0 px-4">
+  <div  className="">
     <ClientWraper />
   </div>
   );
