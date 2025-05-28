@@ -6,7 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 import useService from "@/src/hook/useService";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
-import { ImCross } from "react-icons/im";
 
 interface Service {
   id: string;

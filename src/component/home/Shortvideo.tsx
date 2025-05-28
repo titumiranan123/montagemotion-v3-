@@ -31,7 +31,7 @@ const Shortvideo: React.FC = () => {
     <div className="flex  section lg:flex-nowrap flex-wrap justify-between max-w-[996px]  overflow-hidden mx-auto  ">
       <div className=" lg:w-1/2 w-full flex justify-start flex-col">
         <h2 className="bg-clip-text text-transparent bg-gradient-to-r from-[#FFFFFF] to-[#25AAE1] poppins font-bold  text-left ">
-          OUR RECENT PROJECT
+          Our Short Form Video Editing
         </h2>
         <p className="mt-[14px] md:mt-[34px] ptag text-[#D9D9D9] md:w-[505px] ">
           Montage motion is the reliable digital solutions provider to grow your
@@ -75,13 +75,13 @@ const Shortvideo: React.FC = () => {
                         : false
                     }
                     playIcon={
-                      <div className="flex items-center justify-center w-full h-full">
+                      <div className="flex items-center justify-center w-[68px] h-[48px]">
                         <Image
-                          src="/assets/playbutton.png"
-                          width={60}
-                          height={60}
+                          src="/small.png"
+                          width={68}
+                          height={48}
                           alt="Play"
-                          className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"
+                          className=""
                           priority
                         />
                       </div>

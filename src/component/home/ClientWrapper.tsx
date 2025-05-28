@@ -9,14 +9,15 @@ import Faqservice from "../servicepages/ServiceFaq";
 import TestimonailSection from "@/src/component/servicepages/Testimonial";
 import Pricingsection from "../servicepages/Pricingsection";
 import useSmoothScroll from "../useSmoothScroll";
+import Services from "./Services";
 
 const ClientWraper = () => {
   const { data, isLoading } = useHomeApi("main");
-  
-  useSmoothScroll()
+  // useSmoothScroll()
   return (
-    <div className="header-background container">
+    <div className="header-background lg:px-0 px-2">
       <HeaderService isLoading={isLoading} mainIntro={data?.header} />
+      <Services />
       <CarStackScroll data={data?.works} isLoading={isLoading} />
 
       <Shortvideo />

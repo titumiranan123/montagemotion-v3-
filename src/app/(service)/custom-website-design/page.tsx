@@ -1,5 +1,6 @@
 "use client";
 import HeaderService from "@/src/component/servicepages/Header";
+import Pricingsection from "@/src/component/servicepages/Pricingsection";
 import Faqservice from "@/src/component/servicepages/ServiceFaq";
 import TestimonailSection from "@/src/component/servicepages/Testimonial";
 import ThumbnailWorksection from "@/src/component/servicepages/ThumbnailWorksection";
@@ -49,6 +50,13 @@ const CustomWebsite = () => {
           isLoading={isLoading}
         />
       )}
+      <Pricingsection
+        data={data?.pricing}
+        title={"Pricing"}
+        sub_title={
+          "Montage Motion is an Advertising and Digital Agency specializing in Influencer Marketing"
+        }
+      />
     </div>
   );
 };

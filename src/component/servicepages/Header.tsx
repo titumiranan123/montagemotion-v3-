@@ -23,7 +23,7 @@ interface HeaderServiceProps {
 const HeaderService: React.FC<HeaderServiceProps> = ({
   mainIntro,
   isLoading,
-}) => { 
+}) => {
   if (isLoading) {
     return <SkeletonLoader />;
   }
@@ -32,7 +32,7 @@ const HeaderService: React.FC<HeaderServiceProps> = ({
     <section className="">
       <div className="relative w-full ">
         <div className="max-w-[800px] pt-16 lg:pt-[138px] mx-auto text-center md:text-left">
-          <h1 className="text-[#d8d6d6] poppins uppercase text-[24px] sm:text-[32px] md:text-[45px] lg:text-[64px] font-bold leading-tight md:leading-[72px] text-center">
+          <h1 className="bg-gradient-to-r from-white via-white to-[#1fb5dd] bg-clip-text text-transparent  capitalize z-20  text-[45px] leading-[55px] lg:text-[64px] font-bold lg:leading-[82px] text-center">
             {mainIntro?.title}
           </h1>
 
@@ -40,21 +40,21 @@ const HeaderService: React.FC<HeaderServiceProps> = ({
             {mainIntro?.description}
           </p>
 
-          <div className="flex flex-col md:flex-row justify-center md:justify-center items-center gap-4  md:mt-16 mt-10">
+          <div className="flex flex-row justify-center md:justify-center items-center gap-4  md:mt-16 mt-10">
             <Link
               href="/works"
-              className="flex justify-center items-center gap-3 font-bold text-[16px] py-4 px-7 w-full sm:w-[246px] md:w-[200px] rounded-[30px] border border-white text-white hover:border-none headerbtn"
+              className="flex justify-center items-center gap-3 font-bold text-[16px] p-4 text-white hover:border-none headerbutton"
             >
-              Our Works
+              Book a Call
             </Link>
 
             <Link
               href="https://calendly.com/imonofficial2/30min?month=2024-07"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex justify-center items-center gap-3 font-bold text-[16px] py-4 px-7 w-full sm:w-[246px] md:w-[200px] rounded-[30px] border border-white text-white hover:border-none headerbtn"
+              className="flex justify-center items-center gap-3 font-bold text-[16px] p-4 w-[126px] rounded-[16px] border border-white text-white hover:border-none headersecond"
             >
-              Book a Schedule
+              Our Works
             </Link>
           </div>
         </div>
@@ -102,8 +102,7 @@ const SkeletonLoader = () => {
         <div className="max-w-[800px] pt-16 lg:pt-[138px] mx-auto text-center md:text-left ">
           {/* Title Skeleton */}
           <div className="flex flex-col items-center">
-
-          <div className="h-8 sm:h-10 md:h-12 lg:h-16 w-3/4 mx-auto md:mx-0 bg-gray-300 dark:bg-gray-700 rounded animate-pulse"></div>
+            <div className="h-8 sm:h-10 md:h-12 lg:h-16 w-3/4 mx-auto md:mx-0 bg-gray-300 dark:bg-gray-700 rounded animate-pulse"></div>
           </div>
 
           {/* Description Skeleton */}

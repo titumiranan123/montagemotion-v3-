@@ -6,6 +6,7 @@ import Worksection from "@/src/component/servicepages/Worksection";
 import useHomeApi from "@/src/hook/useHomeApi";
 import React from "react";
 import TestimonailSection from "@/src/component/servicepages/Testimonial";
+import Pricingsection from "@/src/component/servicepages/Pricingsection";
 const AdvertisingService = () => {
   const { data, isLoading } = useHomeApi("advertising");
   // faqs
@@ -30,6 +31,13 @@ const AdvertisingService = () => {
           isLoading={isLoading}
         />
       )}
+      <Pricingsection
+        data={data?.pricing}
+        title={"Pricing"}
+        sub_title={
+          "Montage Motion is an Advertising and Digital Agency specializing in Influencer Marketing"
+        }
+      />
     </div>
   );
 };

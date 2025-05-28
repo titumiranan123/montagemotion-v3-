@@ -7,7 +7,7 @@ const Services = () => {
   const { data, isLoading } = useService();
   
   return (
-    <div className="container section">
+    <div className="max-w-[998px] mx-auto section">
       <div className="flex  flex-col text-white  mx-auto gap-4">
         <h2 className="lg:w-[800px] text-center mx-auto">Our Services</h2>
         <p className="text-center">
@@ -15,7 +15,7 @@ const Services = () => {
           InFluencer Marketing
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 max-w-[998px] mx-auto gap-4 mt-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 w-full mx-auto gap-4 mt-16">
         {isLoading ? (
           <>
             {[...Array(6)].map((_, idx) => (

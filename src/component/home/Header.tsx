@@ -21,9 +21,10 @@ const Header = () => {
     
       >
         <div className="max-w-[800px] lg:pt-[160px] pt-28 mx-auto px-4">
-          <h1 className="text-[#d8d6d6] poppins uppercase z-20 text-[21px] md:text-[45px] lg:text-[64px] font-bold md:leading-[72px] text-center">
-            {mainIntro?.title}
-          </h1>
+          <h1 className="bg-gradient-to-r from-white via-white to-[#1fb5dd] bg-clip-text text-transparent poppins capitalize z-20 text-[21px] md:text-[45px] lg:text-[64px] font-bold md:leading-[72px] text-center ">
+  {mainIntro?.title}
+</h1>
+
 
           <p className="text-[#E4E8F7] text-[12px] md:text-[16px] font-[400] mt-[23px] text-center md:text-left">
             {mainIntro?.description}

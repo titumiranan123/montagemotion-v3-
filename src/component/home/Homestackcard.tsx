@@ -10,8 +10,7 @@ interface WorkItem {
   video_link: string;
 }
 
-const Homestackcardsection = ({data,isLoading}:any) => {
-console.log(data,"asdfoijasdpokfjka'dsfjlksadjfasdfkl")
+const Homestackcardsection = ({ data, isLoading }: any) => {
   const containerRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -39,34 +38,32 @@ console.log(data,"asdfoijasdpokfjka'dsfjlksadjfasdfkl")
 
   return (
     <>
-    <div className="flex section container flex-col text-white  mx-auto gap-4">
+      <div className="flex section container flex-col text-white  mx-auto gap-4">
         <h2 className="lg:w-[800px] text-center mx-auto">Full-form Video</h2>
         <p className="text-center">
           Montage Motion is an Advertising and Digital Agency speciallzing in
           InFluencer Marketing
         </p>
       </div>
-    <div
-      ref={containerRef}
-      className="relative max-w-[1200px] mx-auto mt-10 lg:mt-16  flex flex-col items-center justify-center   px-4"
-    >
-      
-      {works.map((item, i) => {
-        // Dynamic scaling range for each card based on its index
-        const rangeStart = works.length;
-        const rangeEnd = (i + 0.1) / works.length;
-        return (
-          <Stackcard
-            key={item.id}
-            url={item.video_link}
-            image={item.thumbnail}
-            index={i}
-            scrollProgress={smoothScroll}
-            range={[rangeStart, rangeEnd]}
-          />
-        );
-      })}
-    </div>
+      <div
+        ref={containerRef}
+        className="relative max-w-[1200px] mx-auto mt-10 lg:mt-16  flex flex-col items-center justify-center   px-4"
+      >
+        {works.map((item, i) => {
+          const rangeStart = works.length;
+          const rangeEnd = (i + 0.1) / works.length;
+          return (
+            <Stackcard
+              key={item.id}
+              url={item.video_link}
+              image={item.thumbnail}
+              index={i}
+              scrollProgress={smoothScroll}
+              range={[rangeStart, rangeEnd]}
+            />
+          );
+        })}
+      </div>
     </>
   );
 };

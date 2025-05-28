@@ -2,7 +2,7 @@ import { useTransform } from "framer-motion";
 import Image from "next/image";
 import ReactPlayer from "react-player";
 import { motion } from "framer-motion";
-import background from './../../../public/assets/facebook.png'
+import background from "./../../../public/assets/facebook.png";
 
 const Stackcard = ({
   image,
@@ -18,11 +18,11 @@ const Stackcard = ({
   range: number[];
 }) => {
   const scale = useTransform(scrollProgress, range, [0.03, 1.2]);
-const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
-const topValue = isMobile
-  ? `calc(60px + ${index * 20}px)` // mobile top
-  : `calc(-2vh + ${index * 20}px)`; // desktop top
+  const topValue = isMobile
+    ? `calc(60px + ${index * 20}px)` // mobile top
+    : `calc(-2vh + ${index * 20}px)`; // desktop top
 
   return (
     <motion.div
@@ -34,15 +34,19 @@ const topValue = isMobile
     >
       <div className="w-full h-[190px] sm:h-[260px] md:w-[700px] md:h-[410px] lg:w-[792px] lg:h-[464px] bg-white rounded-xl shadow-xl overflow-hidden pointer-events-auto border border-gray-200">
         <ReactPlayer
-          light={image && (image.startsWith("http") || image.startsWith("/")) ? image : false}
+          light={
+            image && (image.startsWith("http") || image.startsWith("/"))
+              ? image
+              : false
+          }
           playIcon={
-            <div className="flex items-center justify-center w-full h-full">
+            <div className="flex items-center justify-center w-[68px] h-[48px] overflow-hidden">
               <Image
-                src="/assets/playbutton.png"
-                width={60}
-                height={60}
+                src="/small.png"
+                width={68}
+                height={48}
                 alt="Play"
-                className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"
+                className=""
                 priority
               />
             </div>
@@ -56,7 +60,5 @@ const topValue = isMobile
     </motion.div>
   );
 };
-
-
 
 export default Stackcard;
