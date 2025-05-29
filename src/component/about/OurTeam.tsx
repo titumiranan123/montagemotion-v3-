@@ -15,7 +15,7 @@ const OurTeam: React.FC<Member> = ({ members }) => {
   return (
     <div className="max-w-[1000px] mx-auto section">
       <div className="flex  flex-col text-white  mx-auto gap-4">
-        <h2 className="lg:w-[800px] text-center mx-auto">Our Team</h2>
+        <h2 className="lg:w-[800px] text-center mx-auto satoshi">Our Team</h2>
         <p className="text-center font-[400]">
           Montage Motion is an Advertising and Digital Agency speciallzing in
           InFluencer Marketing 

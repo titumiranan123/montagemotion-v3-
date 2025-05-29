@@ -8,12 +8,7 @@ import React from 'react';
 const Abouts = () => {
     const {data} = useAboutpage()
     return (
-        <div  style={{
-            backgroundImage: "url(/assets/background.png)",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "top",
-  
-          }} className='mt-16 lg:mt-30 min-h-screen container'>
+        <div   className='mt-16 lg:mt-30 min-h-screen max-w-[996px] mx-auto lg:px-0 px-2 pagelogo  '>
             <Ourstorysection about={data?.about} />
             <MissionVission  />
             <OurTeam  members={data?.member}/>

@@ -7,11 +7,7 @@ import React from "react";
 const Blogs = () => {
   const { data ,isLoading } = useBlog();
   return (
-    <div style={{
-        backgroundImage: "url(/assets/background.png)",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center center",
-      }} className="relative container lg:mt-20 mt-16 min-h-screen">
+    <div  className="relative container lg:mt-20 mt-16 min-h-screen header-background pagelogo">
       <div className="text-white flex flex-col justify-center items-center lg:w-[695px] gap-6 mx-auto w-full">
         <h2 className="poppins">Read Our Blogs</h2>
         <p>

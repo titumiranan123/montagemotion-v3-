@@ -16,19 +16,21 @@ const Footer = () => {
       <div className="grid grid-cols-1 gap-8 pb-10 sm:grid-cols-2 lg:grid-cols-4">
         {/* Logo and Newsletter */}
         <div className="sm:col-span-2 max-w-[450px] lg:col-span-2 space-y-4">
-          <Image
-            width={185}
-            height={92}
-            src={"/assets/footerlogo.png"}
-            alt="Company Logo"
-            className="w-40 md:w-56"
-          />
-          <p className="text-[14px] md:text-[16px] openSans text-[#E4E8F7]">
+          <div className="w-[185px] h-[56px] mb-8">
+            <Image
+              width={185}
+              height={92}
+              src={"/assets/footerlogo.png"}
+              alt="Company Logo"
+              className="w-40 md:w-56"
+            />
+          </div>
+          <p className="text-[14px] md:text-[16px] openSans text-[#E4E8F7] lg:mx-4 ">
             Subscribe our newsletter to stay updated and get special offers.
           </p>
           <form
             onSubmit={onSubmit}
-            className="flex flex-col mt-4 lg:mt-8 sm:flex-row w-full max-w-[310px] md:h-[58px] h-[110px] p-2 rounded-[16px] bg-[#585858]/20  gap-2 items-center"
+            className="flex flex-col mt-4 lg:mx-4 lg:mt-8 sm:flex-row w-full max-w-[310px] md:h-[58px] h-[110px] p-2 rounded-[16px] bg-[#585858]/20  gap-2 items-center"
           >
             <input
               type="email"

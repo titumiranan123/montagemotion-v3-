@@ -30,32 +30,29 @@ const ContactForm = () => {
 
   return (
     <div
-      style={{
-        backgroundImage: "url(/assets/background.png)",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      }}
-      className="relative container lg:mt-20 mt-16 -z-10"
+      // style={{
+      //   backgroundImage: "url(/assets/background.png)",
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundPosition: "center",
+      // }}
+      className="relative pagelogo max-w-[996px] mx-auto lg:px-0 px-2 lg:mt-20 mt-16 -z-10"
     >
       <div className=" flex  flex-col items-center ">
-        <div className="text-white flex flex-col justify-center items-center lg:w-[695px] gap-6 mx-auto w-full">
-          <h2 className="poppins">Contact Us</h2>
+        <div className="text-white flex flex-col justify-center items-center lg:w-[695px] lg:gap-5 mx-auto w-full gap-4">
+          <h2 className="satoshi ">Contact Us</h2>
           <p>
-            Montage Motion is an Advertising and Digital Agency specializing in
-            Influencer Marketing, Video production & Post Production, Thumbnail
-            Design, Content Strategy, Marketing Visual Design, Custom Website
-            Design & Development, and Content Marketing.
+            Montage Motion is an Advertising and Digital Agency specializing in Influencer Marketing, Video production & Post Production, Thumbnail  Design, Content Strategy, Marketing Visual Design, Custom Website  Design & Development, and Content Marketing.
           </p>
         </div>
 
-        <div className="grid gap-5 md:gap-10 z-30 mt-[100px] grid-cols-1 lg:grid-cols-2">
+        <div className="grid gap-5 md:gap-10 z-30 lg:mt-[80px] mt-[40px] grid-cols-1 lg:grid-cols-2">
           <div className="flex  flex-col gap-3 me-auto">
             <div className="flex   flex-col">
               <h2 className="md:text-[21px]  text-[18px] font-[600] text-white uppercase md:leading-[30px]">
                 Lets &nbsp; Work &nbsp;together
               </h2>
-              <p className="text-[#E4E8F7] text-[16px]  mt-2 font-[400]">
-                Get attractive offers, let&apos;s create stuning works <br />{" "}
+              <p className="text-[#E4E8F7] text-[16px]  mt-2 font-[400] lg:w-[75%] w-full">
+                Get attractive offers, let&apos;s create stuning works {" "}
                 together . fill in your data and we will contact
               </p>
             </div>

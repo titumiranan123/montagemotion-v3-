@@ -1,11 +1,11 @@
 @import "tailwindcss";
 @font-face {
-  font-family: 'Satoshi-Bold';
-  src: url('./../../public/Fonts/Satoshi-Bold.otf');
+  font-family: "Satoshi-Bold";
+  src: url("./../../public/Fonts/Satoshi-Bold.otf");
   font-weight: 700;
 }
-.satoshi{
-  font-family: 'Satoshi-Bold' !important;
+.satoshi {
+  font-family: "Satoshi-Bold" !important;
 }
 #fluid {
   pointer-events: none !important;
@@ -84,7 +84,12 @@
 }
 
 .gradienttext {
-  background: linear-gradient(90deg, #ffffff 0%, #ffffff 49.89%, #1fb5dd 100%) !important;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 49.89%,
+    #1fb5dd 100%
+  ) !important;
   background-clip: text !important;
   color: transparent !important;
 }
@@ -96,7 +101,6 @@
   h2 {
     font-family: var(--font-montserrat);
     @apply font-[700] lg:text-[64px] lg:leading-[76px] text-[36px] leading-[40px];
-    
   }
   h3 {
     font-family: var(--font-montserrat);
@@ -154,13 +158,21 @@
   width: 50px !important;
   height: 50px !important;
 }
-
+.pagelogo {
+  background-image: url('./../../public/assets/background.png');
+  background-repeat: no-repeat;
+  background-position: top;
+}
 /* Adjust for mobile devices */
 @media (max-width: 640px) {
   .shortVideo {
     height: 540px !important;
     width: 300px !important;
   }
+  .pagelogo {
+
+  background-position: center;
+}
   .header-background {
     background-position: center 90px;
   }

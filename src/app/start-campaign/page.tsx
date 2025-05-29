@@ -100,7 +100,7 @@ const Campaign = () => {
     >
       <div className="flex flex-col items-center">
         <div className="text-white flex flex-col justify-center items-center lg:w-[695px] gap-6 mx-auto w-full">
-          <h2 className="poppins">Start Campaign</h2>
+          <h2 className="satoshi">Start Campaign</h2>
           <p>
             Montage Motion is an Advertising and Digital Agency specializing in
             Influencer Marketing.
@@ -108,7 +108,7 @@ const Campaign = () => {
         </div>
 
         <div className="max-w-[996px] rounded-[16px] py-10 px-6 w-full flex flex-col justify-center items-center bg-[#58585833] gap-5 md:gap-10 z-30 mt-[100px]">
-          <div className="flex">
+          {/* <div className="flex ">
             <div
               className={`flex items-center ${
                 step >= 1 ? "text-white" : "text-gray-400"
@@ -150,7 +150,7 @@ const Campaign = () => {
                 3
               </div>
             </div>
-          </div>
+          </div> */}
 
           <form onSubmit={handleSubmit(onSubmit)} className="w-full">
             {step === 1 && (
