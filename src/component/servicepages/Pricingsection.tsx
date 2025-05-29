@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Pricingcard from "./Pricingcard";
+
 interface IFeature {
   feature: string;
   is_present: string;
   is_active: boolean;
   position: number;
 }
+
 interface IPackage {
   id: number;
   is_visible: boolean;
@@ -41,12 +43,15 @@ const Pricingsection = ({
   if (!data || data.length === 0) {
     return null;
   }
-  const [isSingle, setSingle] = useState("single");
+  
+  const [activeTab, setActiveTab] = useState<"single" | "combo">("single");
+  
   const single = data?.filter((item) => item.pricing_type === "single");
-  const combo = data?.filter((item) => item.pricing_type !== "single");
+  const combo = data?.filter((item) => item.pricing_type === "combo"); // Changed from !== to === for clarity
+  
   return (
-    <div className="section lg:px-0 px-2 max-w-[996px]  w-full mx-auto ">
-      <div className="flex  flex-col text-white  mx-auto lg:gap-4 gap-2">
+    <div className="section lg:px-0 px-2 max-w-[996px] w-full mx-auto">
+      <div className="flex flex-col text-white mx-auto lg:gap-4 gap-2">
         <h2
           data-aos="fade-up"
           data-aos-delay="200"
@@ -66,17 +71,17 @@ const Pricingsection = ({
           className="border rounded-xl p-2 mt-10 w-[200px] mx-auto gap-2 flex justify-between items-center"
         >
           <button
-            onClick={() => setSingle("single")}
-            className={`py-3 w-[86px] h-[54px]  px-3 text-white rounded-lg ${
-              isSingle === "single" ? "bg-[#25AAE1]" : ""
+            onClick={() => setActiveTab("single")}
+            className={`py-3 w-[86px] h-[54px] px-3 text-white rounded-lg ${
+              activeTab === "single" ? "bg-[#25AAE1]" : ""
             }`}
           >
             Single
           </button>
           <button
-            onClick={() => setSingle("combo")}
-            className={`py-3 w-[86px] h-[54px]  px-3 text-white rounded-lg ${
-              isSingle !== "single" ? "bg-[#25AAE1]" : ""
+            onClick={() => setActiveTab("combo")}
+            className={`py-3 w-[86px] cursor-pointer h-[54px] px-3 text-white rounded-lg ${
+              activeTab === "combo" ? "bg-[#25AAE1]" : ""
             }`}
           >
             Combo
@@ -84,12 +89,11 @@ const Pricingsection = ({
         </div>
       </div>
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 mt-12">
-        {isSingle === "single" ? (
+        {activeTab === "single" ? (
           single && single.length > 0 ? (
             single.map((data, idx) => (
-              <div data-aos="fade-up" data-aos-delay={100 + idx * 100}>
-                {" "}
-                <Pricingcard key={idx} data={data} />{" "}
+              <div key={idx} data-aos="fade-up" data-aos-delay={100 + idx * 100}>
+                <Pricingcard data={data} />
               </div>
             ))
           ) : (
@@ -97,8 +101,8 @@ const Pricingsection = ({
           )
         ) : combo && combo.length > 0 ? (
           combo.map((data, idx) => (
-            <div data-aos="fade-up" data-aos-delay={100 + idx * 100}>
-              <Pricingcard key={idx} data={data} />{" "}
+            <div key={idx} data-aos="fade-up" data-aos-delay={100 + idx * 100}>
+              <Pricingcard data={data} />
             </div>
           ))
         ) : (

@@ -32,14 +32,10 @@ export default function RootLayout({
         className={`${poppins.variable} ${monserrat.variable} ${opensans.variable} bg-black `}
       >
         <Provider>
-          
-            <Navbar />
-          
-          
-          {/* Main content */}
-          <div style={{zIndex:-1}} className="relative z-0">
-            {children} {/* This contains your HeaderService */}
-          </div>
+          <Navbar />
+
+          {children}
+
           <Footer />
         </Provider>
         <RippleCursor />

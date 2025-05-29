@@ -144,15 +144,15 @@
 }
 @layer base {
   h1 {
-    font-family: var(--font-montserrat);
+    font-family: "Satoshi-Bold" !important;
     @apply font-[700] lg:text-[80px] leading-[96px] text-[32px];
   }
   h2 {
-    font-family: var(--font-montserrat);
+    font-family: "Satoshi-Bold" !important;
     @apply font-[700] lg:text-[64px] lg:leading-[76px] text-[36px] leading-[40px];
   }
   h3 {
-    font-family: var(--font-montserrat);
+    font-family: "Satoshi-Bold" !important;
     @apply font-[700] lg:text-[24px] lg:leading-[33.6px] text-[20px];
   }
   p {

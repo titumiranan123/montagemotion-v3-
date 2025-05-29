@@ -65,7 +65,7 @@ const Navbar = () => {
 //       }
   return (
     <header
-      className={`  z-50 transition-all duration-300 `}
+      className={` transition-all duration-300 `}
     >
       <div className="max-w-[1000px] mx-auto  py-4">
         <nav className="flex justify-between items-center relative">
@@ -82,7 +82,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-4 text-[#DBDBDB] bg-[#58585833] bg-opacity-50 px-4 py-3 rounded-xl backdrop-blur-md h-[73px]">
+          <div style={{zIndex:9999}} className="hidden lg:flex items-center gap-4 text-[#DBDBDB] bg-[#58585833] bg-opacity-50 px-8 py-3 rounded-xl backdrop-blur-md h-[58px]">
             <Link
               href="/"
               className={`hover:text-white transition-colors ${
@@ -101,7 +101,7 @@ const Navbar = () => {
               >
                 Services <FaAngleDown className="mt-1 w-4 h-4" />
               </span>
-              <div className="absolute top-6 -left-[348px] w-[900px] transform translate-y-5 group-hover:translate-y-4 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 ease-in-out z-50">
+              <div className="absolute top-6 -left-[348px] w-[900px] transform translate-y-5 group-hover:translate-y-4  opacity-0 invisible group-hover:opacity-100  group-hover:visible transition-all duration-300 ease-in-out z-50">
                 <div
                   style={{
                     boxShadow: "inset 0px 0px 21px #25AAE1CC",

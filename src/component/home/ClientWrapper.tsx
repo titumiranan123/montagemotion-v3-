@@ -32,13 +32,13 @@ const ClientWraper = () => {
         />
       )}
       <Faqservice items={data?.faqs} />
-      <Pricingsection
+      {/* <Pricingsection
         data={data?.pricing}
         title={"Pricing"}
         sub_title={
           "Montage Motion is an Advertising and Digital Agency specializing in Influencer Marketing"
         }
-      />
+      /> */}
     </div>
   );
 };

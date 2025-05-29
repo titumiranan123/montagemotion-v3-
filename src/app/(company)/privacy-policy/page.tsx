@@ -2,10 +2,10 @@
 
 const Privacypolicy = () => {
     return (
-      <div className="max-w-[1240px] mx-auto px-2">
-        <h1 className="mb-[60px] mt-[120px] text-center text-[36px] text-white ">
-          PRIVACY POLICY
-        </h1>
+      <div className="max-w-[996px] mx-auto px-2">
+        <h2 style={{textTransform:"capitalize"}} className="lg:mt-30 capitalize mb-4 mt-12 text-white ">
+          Privacy Policy
+        </h2>
         <div className="openSans text-[#E4E8F7]">
           <div className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] openSans">
             <p>Effective Date: 26 August, 2024</p>
@@ -28,9 +28,9 @@ const Privacypolicy = () => {
           </div>
           <div className="flex flex-col gap-5 mt-5">
             <div>
-              <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+              <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
                 1. Information We Collect
-              </h1>
+              </h3>
 
               <ul className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] list-disc openSans ms-6">
                 <li>
@@ -48,9 +48,9 @@ const Privacypolicy = () => {
               </ul>
             </div>
             <div>
-              <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+              <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
                 2. How We Share Your Information
-              </h1>
+              </h3>
               <p className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] openSans">
                 We may use the information we collect for various purposes,
                 including :
@@ -74,9 +74,9 @@ const Privacypolicy = () => {
               </ul>
             </div>
             <div>
-              <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+              <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
                 3. How We Share Your Information
-              </h1>
+              </h3>
               <p className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] openSans">
                 We do not sell, trade, or otherwise transfer your personal
                 information to third parties without your consent, except as
@@ -102,9 +102,9 @@ const Privacypolicy = () => {
               </ul>
             </div>
             <div>
-              <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+              <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
                 4. Data Security
-              </h1>
+              </h3>
               <p className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] openSans">
                 We implement appropriate technical and organizational measures
                 to protect your personal information from unauthorized access,
@@ -115,9 +115,9 @@ const Privacypolicy = () => {
               </p>
             </div>
             <div>
-              <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+              <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
                 5. Your Rights
-              </h1>
+              </h3>
               <p className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] openSans">
                 Depending on your location , you may have certain rights
                 regarding your personal information , including :
@@ -143,9 +143,9 @@ const Privacypolicy = () => {
             </div>
 
             <div>
-              <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+              <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
                 6. Third-Party Links
-              </h1>
+              </h3>
               <p className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] openSans">
                 Our website may contain links to third-party websites or
                 services that are not operated by us. We are not responsible for
@@ -155,9 +155,9 @@ const Privacypolicy = () => {
               </p>
             </div>
             <div>
-              <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+              <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
                 7. Changes to This Privacy Policy
-              </h1>
+              </h3>
               <p className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] openSans">
                 We may update this Privacy Policy from time to time. We will
                 notify you of any changes by posting the new Privacy Policy on
@@ -167,9 +167,9 @@ const Privacypolicy = () => {
             </div>
 
             <div>
-              <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+              <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
                 8. Contact Us
-              </h1>
+              </h3>
               <p className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] openSans">
                 {" "}
                 If you have any questions or concerns about this Privacy Policy

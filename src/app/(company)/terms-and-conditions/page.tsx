@@ -2,10 +2,10 @@
 const Termsandconditions = () => {
   
   return (
-    <div className="max-w-[1240px] mx-auto px-2">
-      <h1 className="mb-[60px] mt-[120px] text-center text-[36px] text-white ">
-        TERMS AND CONDITIONS
-      </h1>
+    <div className="max-w-[996px] mx-auto px-2">
+      <h2 className="mb-3 capitalize text-white lg:mt-30 mt-10 satoshi">
+        Terms and  Conditions
+      </h2>
       <div className="openSans text-[#E4E8F7]">
         <div className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] openSans">
           <p>Effective Date: 26 August, 2024</p>
@@ -21,9 +21,9 @@ const Termsandconditions = () => {
         </div>
         <div className="flex flex-col gap-5 mt-5">
           <div>
-            <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+            <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
               1. Acceptance of Terms :{" "}
-            </h1>
+            </h3>
             <p className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] openSans">
               {" "}
               By accessing or using our services, you acknowledge that you have
@@ -33,9 +33,9 @@ const Termsandconditions = () => {
             </p>
           </div>
           <div>
-            <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+            <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
               2. Services :{" "}
-            </h1>
+            </h3>
             <p className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] openSans">
               {" "}
               Montage Motion provides video editing services and other related
@@ -47,9 +47,9 @@ const Termsandconditions = () => {
             </p>
           </div>
           <div>
-            <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+            <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
               3. User Responsibilities :{" "}
-            </h1>
+            </h3>
             <ul className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] list-disc openSans ms-6">
               <li>
                 Accuracy of Information: You agree to provide accurate, current,
@@ -66,9 +66,9 @@ const Termsandconditions = () => {
             </ul>
           </div>
           <div>
-            <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+            <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
               4. User Responsibilities :{" "}
-            </h1>
+            </h3>
             <ul className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] list-disc openSans ms-6">
               <li>
                 Ownership: All content, materials, and intellectual property
@@ -84,9 +84,9 @@ const Termsandconditions = () => {
             </ul>
           </div>
           <div>
-            <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+            <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
               5. Payment and Refunds:{" "}
-            </h1>
+            </h3>
             <ul className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] list-disc openSans ms-6">
               <li>
                 Pricing: The pricing for our Services is listed on our website
@@ -106,9 +106,9 @@ const Termsandconditions = () => {
             </ul>
           </div>
           <div>
-            <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+            <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
               6. Limitation of Liability :{" "}
-            </h1>
+            </h3>
             <ul className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] list-disc openSans ms-6">
               <li>
                 No Warranties: Our Services are provided &quot;as is&quot; and
@@ -128,9 +128,9 @@ const Termsandconditions = () => {
             </ul>
           </div>
           <div>
-            <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+            <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
               7. Indemnification:{" "}
-            </h1>
+            </h3>
             <p className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] openSans">
               {" "}
               You agree to indemnify, defend, and hold harmless Montage Motion,
@@ -143,9 +143,9 @@ const Termsandconditions = () => {
           </div>
           {/* new  */}
           <div>
-            <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+            <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
               8. Termination :{" "}
-            </h1>
+            </h3>
             <p className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] openSans">
               {" "}
               We reserve the right to terminate or suspend your access to our
@@ -155,9 +155,9 @@ const Termsandconditions = () => {
             </p>
           </div>
           <div>
-            <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+            <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
               9. Governing Law :{" "}
-            </h1>
+            </h3>
             <p className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] openSans">
               {" "}
               These Terms shall be governed by and construed in accordance with
@@ -168,9 +168,9 @@ const Termsandconditions = () => {
             </p>
           </div>
           <div>
-            <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+            <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
               10. Changes to These Terms :{" "}
-            </h1>
+            </h3>
             <p className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] openSans">
               {" "}
               We may update these Terms from time to time. We will notify you of
@@ -182,9 +182,9 @@ const Termsandconditions = () => {
           </div>
 
           <div>
-            <h1 className="font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
+            <h3 className="mb-2 font-[700] md:text-[24px] md:leading-[33.6px]  premiumfont">
               11. Contact Us :{" "}
-            </h1>
+            </h3>
             <p className="font-[400] md:text-[16px] md:leading-[22.4px] text-[14px] leading-[20px] openSans">
               {" "}
               If you have any questions or concerns about these Terms, please
