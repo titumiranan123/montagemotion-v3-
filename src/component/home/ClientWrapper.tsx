@@ -15,7 +15,7 @@ const ClientWraper = () => {
   const { data, isLoading } = useHomeApi("main");
   useSmoothScroll()
   return (
-    <div className="header-background lg:px-0 px-2 ">
+    <div className="header-background lg:px-0 px-2 relative">
       <HeaderService isLoading={isLoading} mainIntro={data?.header} />
       <Services />
       <CarStackScroll data={data?.works} isLoading={isLoading} />

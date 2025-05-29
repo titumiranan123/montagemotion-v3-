@@ -29,13 +29,13 @@ const HeaderService: React.FC<HeaderServiceProps> = ({
   }
 
   return (
-    <section className="">
+    <section style={{zIndex:-9999}} className="">
       <div className="relative w-full ">
-        <div className="max-w-[800px] pt-16 lg:pt-[138px] mx-auto text-center md:text-left">
+        <div className="max-w-[800px]  pt-16 lg:pt-[138px] mx-auto text-center md:text-left">
           <h1
             data-aos="fade-up"
             data-aos-delay="100"
-            className="gradienttext  capitalize z-20  text-[36px] leading-[45px] md:text-[45px] md:leading-[60px] lg:text-[64px] font-[700] lg:leading-[76px] text-center satoshi"
+            className="gradienttext  capitalize   text-[36px] leading-[45px] md:text-[45px] md:leading-[60px] lg:text-[64px] font-[700] lg:leading-[76px] text-center satoshi"
           >
             {mainIntro?.title}
           </h1>
