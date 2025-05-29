@@ -1,9 +1,10 @@
 "use client";
+import DesignWorksection from "@/src/component/servicepages/DesignWorksection";
 import HeaderService from "@/src/component/servicepages/Header";
 import Pricingsection from "@/src/component/servicepages/Pricingsection";
 import Faqservice from "@/src/component/servicepages/ServiceFaq";
 import TestimonailSection from "@/src/component/servicepages/Testimonial";
-import ThumbnailWorksection from "@/src/component/servicepages/ThumbnailWorksection";
+
 
 import useHomeApi from "@/src/hook/useHomeApi";
 
@@ -21,7 +22,7 @@ const CustomWebsite = () => {
       <HeaderService isLoading={isLoading} mainIntro={data?.header} />
 
       {ui_ux?.length > 0 && (
-        <ThumbnailWorksection
+        <DesignWorksection
           data={ui_ux}
           title="Our UI/UX Designs"
           description="Montage Motion specializes in creating intuitive user experiences"
@@ -31,7 +32,7 @@ const CustomWebsite = () => {
 
       {/* Other Works ThumbnailWorksection */}
       {otherWorks?.length > 0 && (
-        <ThumbnailWorksection
+        <DesignWorksection
           data={otherWorks}
           title="Our Development Projects"
           description="Explore our website development and digital solutions"
@@ -50,6 +51,7 @@ const CustomWebsite = () => {
           isLoading={isLoading}
         />
       )}
+      <Faqservice items={data?.faqs} />
       <Pricingsection
         data={data?.pricing}
         title={"Pricing"}

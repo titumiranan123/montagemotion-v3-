@@ -1,19 +1,24 @@
-'use client'
-import HeaderService from '@/src/component/servicepages/Header';
-import Faqservice from '@/src/component/servicepages/ServiceFaq';
-import Worksection from '@/src/component/servicepages/Worksection';
-import useHomeApi from '@/src/hook/useHomeApi';
-import React from 'react';
+"use client";
+import HeaderService from "@/src/component/servicepages/Header";
+import Faqservice from "@/src/component/servicepages/ServiceFaq";
+import Worksection from "@/src/component/servicepages/Worksection";
+import useHomeApi from "@/src/hook/useHomeApi";
+import React from "react";
 import TestimonailSection from "@/src/component/servicepages/Testimonial";
-import Pricingsection from '@/src/component/servicepages/Pricingsection';
+import Pricingsection from "@/src/component/servicepages/Pricingsection";
+import ShortsWorkSection from "@/src/component/servicepages/ShortsWorkSection";
 const Shortvideo = () => {
-    const {data,isLoading} = useHomeApi('talking')
-    return (
-         <div className='header-background px-4 lg:px-0'>
-            <HeaderService  isLoading={isLoading} mainIntro={data?.header} />
-            <Worksection data={data?.works} title='Our Ovc'  description='Montage Motion is an Advertising and Digital Agency specializing in influencer Marketing' isLoading={isLoading}/>
-            <Faqservice items={data?.faqs} />
-            <Faqservice items={data?.faqs} />
+  const { data, isLoading } = useHomeApi("shorts");
+  return (
+    <div className="header-background px-4 lg:px-0">
+      <HeaderService isLoading={isLoading} mainIntro={data?.header} />
+      <ShortsWorkSection
+        data={data?.works}
+        title="Shorts"
+        description="Montage Motion is an Advertising and Digital Agency specializing in influencer Marketing"
+        isLoading={isLoading}
+      />
+
       {data?.testimonial.length > 0 && (
         <TestimonailSection
           title={"Testimonials"}
@@ -24,6 +29,7 @@ const Shortvideo = () => {
           isLoading={isLoading}
         />
       )}
+      <Faqservice items={data?.faqs} />
       <Pricingsection
         data={data?.pricing}
         title={"Pricing"}
@@ -31,8 +37,9 @@ const Shortvideo = () => {
           "Montage Motion is an Advertising and Digital Agency specializing in Influencer Marketing"
         }
       />
-        </div>
-    );
+      
+    </div>
+  );
 };
 
 export default Shortvideo;

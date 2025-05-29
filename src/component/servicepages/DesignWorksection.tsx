@@ -1,5 +1,6 @@
 import React from "react";
 import ServiceFullLengthcard from "./ServiceFullLengthcard";
+import Image from "next/image";
 
 interface WorksectionProps {
   title: string;
@@ -13,7 +14,7 @@ interface IWork {
   sub_type?: string;
 }
 
-const Worksection: React.FC<WorksectionProps> = ({
+const DesignWorksection: React.FC<WorksectionProps> = ({
   title,
   description,
   data,
@@ -43,7 +44,14 @@ const Worksection: React.FC<WorksectionProps> = ({
         <>
           <div className="grid grid-cols-1 sm:grid-cols-2 max-w-full sm:max-w-2xl md:max-w-4xl lg:max-w-[998px] mx-auto gap-4 md:gap-6 mt-8 sm:mt-12 md:mt-16 ">
             {data?.slice(0, seeCount).map((work: IWork, idx: number) => (
-              <ServiceFullLengthcard work={work} key={idx} />
+              <div className="overflow-hidden lg:h-[273px] lg:w-[485px] w-full h-auto rounded-[9.91px]  bg-black">
+                <Image
+                  src={work.thumbnail}
+                  alt={`${work.sub_type || ""}-${idx}`}
+                  width={488}
+                  height={274}
+                />
+              </div>
             ))}
           </div>
           {data?.length > 4 && (
@@ -72,4 +80,4 @@ const Worksection: React.FC<WorksectionProps> = ({
   );
 };
 
-export default Worksection;
+export default DesignWorksection;

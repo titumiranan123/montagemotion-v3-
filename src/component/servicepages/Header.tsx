@@ -32,7 +32,7 @@ const HeaderService: React.FC<HeaderServiceProps> = ({
     <section className="">
       <div className="relative w-full ">
         <div className="max-w-[800px] pt-16 lg:pt-[138px] mx-auto text-center md:text-left">
-          <h1 className="gradienttext  capitalize z-20  text-[36px] leading-[45px] md:text-[45px] md:leading-[60px] lg:text-[64px] font-[700] lg:leading-[82px] text-center satoshi">
+          <h1 className="gradienttext  capitalize z-20  text-[36px] leading-[45px] md:text-[45px] md:leading-[60px] lg:text-[64px] font-[700] lg:leading-[76px] text-center satoshi">
             {mainIntro?.title}
           </h1>
 

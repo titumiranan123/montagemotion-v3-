@@ -1,5 +1,6 @@
 import React from "react";
 import ServiceFullLengthcard from "./ServiceFullLengthcard";
+import Shortvideocard from "./Shortvideocard";
 
 interface WorksectionProps {
   title: string;
@@ -13,7 +14,7 @@ interface IWork {
   sub_type?: string;
 }
 
-const Worksection: React.FC<WorksectionProps> = ({
+const ShortsWorkSection: React.FC<WorksectionProps> = ({
   title,
   description,
   data,
@@ -22,7 +23,7 @@ const Worksection: React.FC<WorksectionProps> = ({
   if (!data || data.length === 0) {
     return null;
   }
-  const [seeCount, setSeeCount] = React.useState(4);
+  const [seeCount, setSeeCount] = React.useState(6);
 
   return (
     <div className="container h-auto   section px-4 sm:px-6 lg:px-8">
@@ -41,25 +42,25 @@ const Worksection: React.FC<WorksectionProps> = ({
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-1 sm:grid-cols-2 max-w-full sm:max-w-2xl md:max-w-4xl lg:max-w-[998px] mx-auto gap-4 md:gap-6 mt-8 sm:mt-12 md:mt-16 ">
+          <div className="grid grid-cols-1 sm:grid-cols-3 max-w-full sm:max-w-2xl md:max-w-4xl lg:max-w-[998px] mx-auto gap-4 md:gap-6 mt-8 sm:mt-12 md:mt-16 ">
             {data?.slice(0, seeCount).map((work: IWork, idx: number) => (
-              <ServiceFullLengthcard work={work} key={idx} />
+              <Shortvideocard video={work} key={idx} />
             ))}
           </div>
-          {data?.length > 4 && (
+          {data?.length > 6 && (
             <div className="flex justify-center items-center mt-16 gap-4">
-              {seeCount < data.length && (
+              {seeCount < data?.length && (
                 <button
                   className="text-white border border-white rounded-[12px] p-5 w-[122px] h-[60px] flex justify-center items-center"
-                  onClick={() => setSeeCount(seeCount + 4)}
+                  onClick={() => setSeeCount(seeCount + 3)}
                 >
                   See More
                 </button>
               )}
-              {seeCount > 4 && (
+              {seeCount > 6 && (
                 <button
                   className="text-white border border-white rounded-[12px] p-5 w-[122px] h-[60px] flex justify-center items-center"
-                  onClick={() => setSeeCount(4)}
+                  onClick={() => setSeeCount(6)}
                 >
                   See Less
                 </button>
@@ -72,4 +73,7 @@ const Worksection: React.FC<WorksectionProps> = ({
   );
 };
 
-export default Worksection;
+
+
+
+export default ShortsWorkSection;

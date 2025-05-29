@@ -7,20 +7,30 @@ import useHomeApi from "@/src/hook/useHomeApi";
 import React from "react";
 import TestimonailSection from "@/src/component/servicepages/Testimonial";
 import Pricingsection from "@/src/component/servicepages/Pricingsection";
+import ShortsWorkSection from "@/src/component/servicepages/ShortsWorkSection";
 const AdvertisingService = () => {
   const { data, isLoading } = useHomeApi("advertising");
   // faqs
   // testimonial
+  const shorts = data && data?.works.filter((dt: any) => dt.sub_type !== "ovc");
+  const ovc = data && data?.works.filter((dt: any) => dt.sub_type === "ovc");
+  console.log(shorts, "shorts");
   return (
     <div className="header-background px-4">
       <HeaderService isLoading={isLoading} mainIntro={data?.header} />
       <Worksection
-        data={data?.works}
+        data={ovc}
         title="Our Ovc"
         description="Montage Motion is an Advertising and Digital Agency specializing in influencer Marketing"
         isLoading={isLoading}
       />
-      <Faqservice items={data?.faqs} />
+      <ShortsWorkSection
+        data={shorts}
+        title="Our Reels"
+        description="Montage Motion is an Advertising and Digital Agency specializing in influencer Marketing"
+        isLoading={isLoading}
+      />
+
       {data?.testimonial.length > 0 && (
         <TestimonailSection
           title={"Testimonials"}
@@ -31,6 +41,7 @@ const AdvertisingService = () => {
           isLoading={isLoading}
         />
       )}
+      <Faqservice items={data?.faqs} />
       <Pricingsection
         data={data?.pricing}
         title={"Pricing"}

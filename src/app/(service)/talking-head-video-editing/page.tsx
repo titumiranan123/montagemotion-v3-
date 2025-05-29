@@ -14,12 +14,12 @@ const TalkingHead = () => {
       <HeaderService isLoading={isLoading} mainIntro={data?.header} />
       <Worksection
         data={data?.works}
-        title="Our Ovc"
+        title="Our Edited Videos"
         description="Montage Motion is an Advertising and Digital Agency specializing in influencer Marketing"
         isLoading={isLoading}
       />
 
-      <Faqservice items={data?.faqs} />
+  
       {data?.testimonial.length > 0 && (
         <TestimonailSection
           title={"Testimonials"}
@@ -30,6 +30,7 @@ const TalkingHead = () => {
           isLoading={isLoading}
         />
       )}
+      <Faqservice items={data?.faqs} />
       <Pricingsection
         data={data?.pricing}
         title={"Pricing"}
