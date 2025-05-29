@@ -60,12 +60,12 @@ const Navbar = () => {
       document.body.style.overflow = "";
     };
   }, [isMobileMenuOpen]);
-
+// ${
+//         isScrolled ? "bg-[#080B0C] shadow-md" : "bg-transparent"
+//       }
   return (
     <header
-      className={`sticky top-0  z-50 transition-all duration-300 ${
-        isScrolled ? "bg-[#080B0C] shadow-md" : "bg-transparent"
-      }`}
+      className={`sticky top-0  z-50 transition-all duration-300 `}
     >
       <div className="max-w-[1000px] mx-auto  py-4">
         <nav className="flex justify-between items-center relative">
@@ -82,7 +82,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-4 text-[#DBDBDB] bg-[#58585833] bg-opacity-50 px-4 py-3 rounded-xl backdrop-blur-md">
+          <div className="hidden lg:flex items-center gap-4 text-[#DBDBDB] bg-[#58585833] bg-opacity-50 px-4 py-3 rounded-xl backdrop-blur-md h-[73px]">
             <Link
               href="/"
               className={`hover:text-white transition-colors ${

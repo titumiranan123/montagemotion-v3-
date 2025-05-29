@@ -9,21 +9,27 @@ const Blogs = () => {
   return (
     <div  className="relative container lg:mt-20 mt-16 min-h-screen header-background pagelogo">
       <div className="text-white flex flex-col justify-center items-center lg:w-[695px] gap-6 mx-auto w-full">
-        <h2 className="poppins">Read Our Blogs</h2>
-        <p>
+        <h2 data-aos="fade-up"
+          data-aos-delay="300" className="satoshi">Read Our Blogs</h2>
+        <p
+        data-aos="fade-up"
+          data-aos-delay="400"
+        >
           Montage Motion is an Advertising and Digital Agency specializing in
           Influencer Marketing.
         </p>
       </div>
       <div className="grid grid-cols-1 max-w-[1000px] mx-auto w-full md:grid-cols-2 gap-5 mt-10 lg:mt-16" >
         {data?.map((blog: any, idx: number) => (
-          <Blogcard
-            key={idx}
+          <div key={idx} data-aos="fade-up" data-aos-delay={100 + idx * 100}>
+            <Blogcard
+            
             image={blog.image}
             title={blog.title}
             short_description={blog.short_description}
             slug={blog.slug}
           />
+          </div>
         ))}
       </div>
     </div>

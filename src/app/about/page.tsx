@@ -6,11 +6,11 @@ import useAboutpage from '@/src/hook/useAbout';
 import React from 'react';
 
 const Abouts = () => {
-    const {data} = useAboutpage()
+    const {data,isLoading} = useAboutpage()
     const memeber = data && data?.member?.filter((dt:any)=>dt.role === "team_member")
     return (
         <div   className='mt-16 lg:mt-30 min-h-screen max-w-[996px] mx-auto lg:px-0 px-2 pagelogo  '>
-            <Ourstorysection about={data?.about} />
+            <Ourstorysection about={data?.about} isLoading={isLoading} />
             <MissionVission  />
             <OurTeam  members={memeber}/>
         </div>

@@ -36,6 +36,21 @@
 :root{
   --aos-distance:30px !important
 }
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 1.5s ease forwards;
+}
+
 [data-aos^="fade"][data-aos^="fade"] {
   transform: translate3d(0, var(--aos-distance), 0);
 }
