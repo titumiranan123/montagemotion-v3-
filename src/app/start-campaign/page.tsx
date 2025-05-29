@@ -2,11 +2,12 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import ReCAPTCHA from "react-google-recaptcha";
-import { useDropzone } from "react-dropzone";
+
 import { api_url } from "@/src/hook/Apiurl";
 import toast from "react-hot-toast";
 import useAboutpage from "@/src/hook/useAbout";
 import { FaArrowLeft } from "react-icons/fa";
+import Image from "next/image";
 
 type FormData = {
   name: string;
@@ -15,52 +16,20 @@ type FormData = {
   message: string;
   members: string[];
   budget: string;
-  files: File[];
+  files: string;
 };
 
-const membersData = [
-  {
-    id: "1",
-    name: "John Doe",
-    designation: "Creative Director",
-    image: "/assets/member1.jpg",
-  },
-  {
-    id: "2",
-    name: "Jane Smith",
-    designation: "Marketing Specialist",
-    image: "/assets/member2.jpg",
-  },
-  {
-    id: "3",
-    name: "Mike Johnson",
-    designation: "Content Writer",
-    image: "/assets/member3.jpg",
-  },
-];
+
 
 const Campaign = () => {
   const [step, setStep] = useState(1);
-  const { data } = useAboutpage();
+   const {data} = useAboutpage()
+    const membersData = data && data?.member?.filter((dt:any)=>dt.role !== "team_member")
   const [valid, setValid] = useState<string | null>(null);
-  const [files, setFiles] = useState<File[]>([]);
-
+  
   const { register, handleSubmit, watch, setValue } = useForm<FormData>({
     defaultValues: {
       members: [],
-    },
-  });
-
-  const { getRootProps, getInputProps } = useDropzone({
-    accept: {
-      "application/pdf": [".pdf"],
-      "application/msword": [".doc"],
-      "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-        [".docx"],
-    },
-    onDrop: (acceptedFiles) => {
-      setFiles([...files, ...acceptedFiles]);
-      setValue("files", [...files, ...acceptedFiles]);
     },
   });
 
@@ -81,6 +50,7 @@ const Campaign = () => {
     try {
       // await api_url.post("/api/contacts", formData);
       toast.success("Submitted successfully! 🎉");
+      
     } catch (error: any) {
       toast.error(error?.response?.data?.errorMessages[0].message);
     }
@@ -231,38 +201,40 @@ const Campaign = () => {
                 </div>
                 <h3 className="text-white text-xl">Select Team Members </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {membersData.map((member) => (
+                  {membersData.map((member:any) => (
                     <div
                       key={member.id}
                       onClick={() => toggleMember(member.id)}
-                      className={`p-4 rounded-lg cursor-pointer transition-all ${
-                        selectedMembers.includes(member.id)
-                          ? "bg-[#25AAE1] bg-opacity-30 border-2 border-[#25AAE1]"
-                          : "bg-[#58585833] hover:bg-[#58585866]"
-                      }`}
+                      // className={`p-4 rounded-lg cursor-pointer transition-all ${
+                      //   selectedMembers.includes(member.id)
+                      //     ? "bg-[#25AAE1] bg-opacity-30 border-2 border-[#25AAE1]"
+                      //     : ""
+                      // }`}
                     >
-                      <div className="flex items-center space-x-4">
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          className="w-16 h-16 rounded-full object-cover"
-                        />
-                        <div>
-                          <h4 className="text-white font-medium">
-                            {member.name}
-                          </h4>
-                          <p className="text-gray-300 text-sm">
-                            {member.designation}
-                          </p>
-                        </div>
-                      </div>
+                      
+                       <div className="w-[315px] min-h-[366px] h-full p-4 rounded-[17.54px] bg-[#58585833]">
                       <input
                         type="checkbox"
-                        className="hidden"
+                        
                         checked={selectedMembers.includes(member.id)}
                         {...register("members")}
                         value={member.id}
                       />
+                            <div className="w-[275px] h-[310px] overflow-hidden  mt-3">
+                              <Image
+                              style={{width:'275px',height:'313px'}}
+                              src={member && member.photourl}
+                              alt={member?.name}
+                              width={275}
+                              height={323}
+                              className="rounded-[13.09px]"
+                              priority
+                            />
+                            </div>
+                            <div className="mt-[20px] space-y-1 text-white">
+                              <h3>{member.name}</h3>
+                            </div>
+                          </div>
                     </div>
                   ))}
                 </div>
@@ -286,52 +258,17 @@ const Campaign = () => {
                     {...register("budget", { required: true })}
                   />
                 </div>
-
                 <div>
-                  <h3 className="text-white text-xl mb-4">Upload Documents</h3>
-                  <div
-                    {...getRootProps()}
-                    className="border-2 border-dashed border-gray-500 rounded-lg p-8 text-center cursor-pointer hover:border-[#25AAE1] transition-colors"
-                  >
-                    <input {...getInputProps()} />
-                    <p className="text-gray-300">
-                      Drag & drop some files here, or click to select files
-                    </p>
-                    <p className="text-gray-400 text-sm mt-2">
-                      (PDF, DOC, DOCX)
-                    </p>
-                  </div>
-
-                  {files.length > 0 && (
-                    <div className="mt-4">
-                      <h4 className="text-white mb-2">Selected files:</h4>
-                      <ul className="space-y-2">
-                        {files.map((file, index) => (
-                          <li
-                            key={index}
-                            className="text-gray-300 flex items-center"
-                          >
-                            <span className="truncate max-w-xs">
-                              {file.name}
-                            </span>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                const newFiles = [...files];
-                                newFiles.splice(index, 1);
-                                setFiles(newFiles);
-                                setValue("files", newFiles);
-                              }}
-                              className="ml-2 text-red-400 hover:text-red-300"
-                            >
-                              ×
-                            </button>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                  <h3 className="text-white text-xl mb-4">Documents Link (Drive & Docs)</h3>
+                  <input
+                    type="text"
+                    className="px-[32px] text-white bg-[#58585833] rounded-[8px] backdrop-blur-[160px] w-full h-[70px] py-4 focus:outline-none outline-none"
+                    placeholder="Estimated Budget"
+                    {...register("files", { required: true })}
+                  />
                 </div>
+
+            
 
                 <div className="mt-6">
                   <ReCAPTCHA

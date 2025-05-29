@@ -9,7 +9,7 @@ const Provider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <QueryClientProvider client={queryClient}>
             {children}
             <Toaster />
-            <AOSInit />
+            {/* <AOSInit /> */}
         </QueryClientProvider>
     );
 };

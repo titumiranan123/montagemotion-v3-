@@ -4,7 +4,7 @@ const useAboutpage = () => {
     const {data,isLoading,isError,refetch} = useQuery({
         queryKey:["aboutdata"],
         queryFn:async ()=>{
-        const res = await api_url.get('/api/website/about?cat=team_member')
+        const res = await api_url.get('/api/website/about')
         return res.data.data
         }
     })
