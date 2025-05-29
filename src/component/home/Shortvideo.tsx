@@ -30,15 +30,19 @@ const Shortvideo: React.FC = () => {
   return (
     <div className="flex  section lg:flex-nowrap flex-wrap justify-between max-w-[996px]  overflow-hidden mx-auto  ">
       <div className=" lg:w-1/2 w-full flex justify-start flex-col">
-        <h2 className="gradienttext  satoshi font-bold  text-left ">
+        <h2 data-aos="fade-up"
+            data-aos-delay="200" className="gradienttext  satoshi font-bold  text-left ">
           Our Short Form Video Editing
         </h2>
-        <p className="mt-[14px] md:mt-[34px]  text-[#D9D9D9] md:w-[505px] ">
+        <p data-aos="fade-up"
+            data-aos-delay="300" className="mt-[14px] md:mt-[34px]  text-[#D9D9D9] md:w-[505px] ">
           Montage motion is the reliable digital solutions provider to grow your
           business 3x faster. We provide services on Video Editing and special
           service on Podcast.
         </p>
         <Link
+        data-aos="fade-up"
+            data-aos-delay="400"
           href={"https://calendly.com/imonofficial2/30min?month=2024-07"}
           target="_blank"
           className="py-4 mt-[30px] md:mt-[52px] md:px-6 px-4  text-[#FFFFFF] rounded-[16px] flex justify-center items-center h-[56px]  md:w-[260px] w-[200px] shadow bg-[#25AAE1]"
@@ -46,7 +50,8 @@ const Shortvideo: React.FC = () => {
           Get Your Shorts Edited
         </Link>
       </div>
-      <div className="lg:w-1/2 w-full lg:mt-0 mt-10">
+      <div data-aos="fade-up"
+            data-aos-delay="200" className="lg:w-1/2 w-full lg:mt-0 mt-10">
         <div className="md:w-[322px]  mx-auto w-[300px]  relative">
           <SwiperComponent
             direction="vertical"

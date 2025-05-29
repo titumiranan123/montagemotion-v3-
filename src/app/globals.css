@@ -23,7 +23,41 @@
 
   @apply flex justify-center items-center rounded-[8px] px-3 py-[6px] border border-[#78D5ED];
 }
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
 
+::-webkit-scrollbar-thumb {
+  background: #25AAE1;
+
+  border-radius: 12px;
+}
+:root{
+  --aos-distance:30px !important
+}
+[data-aos^="fade"][data-aos^="fade"] {
+  transform: translate3d(0, var(--aos-distance), 0);
+}
+
+[data-aos="fade-up"] {
+  transform: translate3d(0, var(--aos-distance), 0);
+}
+
+[data-aos="fade-down"] {
+  transform: translate3d(0, calc(-1 * var(--aos-distance)), 0);
+}
+
+[data-aos="fade-left"] {
+  transform: translate3d(var(--aos-distance), 0, 0);
+}
+
+[data-aos="fade-right"] {
+  transform: translate3d(calc(-1 * var(--aos-distance)), 0, 0);
+}
+[data-aos="zoom-in"] {
+  transform: translate3d(calc(-1 * var(--aos-distance) / 4), 0, 0);
+}
 .header-background {
   background-image: url(/assets/logobackgourd.png);
   background-repeat: no-repeat;
@@ -159,7 +193,7 @@
   height: 50px !important;
 }
 .pagelogo {
-  background-image: url('./../../public/assets/background.png');
+  background-image: url("./../../public/assets/background.png");
   background-repeat: no-repeat;
   background-position: top;
 }
@@ -170,9 +204,8 @@
     width: 300px !important;
   }
   .pagelogo {
-
-  background-position: center;
-}
+    background-position: center;
+  }
   .header-background {
     background-position: center 90px;
   }

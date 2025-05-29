@@ -10,6 +10,7 @@ const AOSInit = () => {
       duration: 800,
       once: true,
     });
+    AOS.refresh()
   }, []);
 
   return null; 

@@ -9,8 +9,10 @@ const Services = () => {
   return (
     <div className="max-w-[998px] mx-auto section">
       <div className="flex  flex-col  mx-auto md:gap-4 gap-2.5">
-        <h2 className="gradienttext  capitalize z-20 text-[36px]  md:text-[45px] md:leading-[55px] lg:text-[64px] font-[700] lg:leading-[82px] text-center satoshi ">Our Services</h2>
-        <p className="text-center text-white">
+        <h2   data-aos="fade-up"
+            data-aos-delay="200"  className="gradienttext  capitalize z-20 text-[36px]  md:text-[45px] md:leading-[55px] lg:text-[64px] font-[700] lg:leading-[82px] text-center satoshi ">Our Services</h2>
+        <p   data-aos="fade-up"
+            data-aos-delay="300" className="text-center text-white">
           Montage Motion is an Advertising and Digital Agency speciallzing in
           InFluencer Marketing
         </p>
@@ -24,9 +26,15 @@ const Services = () => {
           </>
         ) : (
           <>
-            {
-              data?.map((service:any,index:number)=><Servicecard serivce={service} key={index} />)
-            }
+            {data?.map((service: any, index: number) => (
+              <div
+                key={index}
+                data-aos="fade-up"
+                data-aos-delay={100 + index * 100} // staggered delay
+              >
+                <Servicecard serivce={service} />
+              </div>
+            ))}
           </>
         )}
       </div>

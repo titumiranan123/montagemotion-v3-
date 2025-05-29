@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useRef, useState } from "react";
 
 interface AccordionItem {
@@ -21,9 +21,11 @@ const Accordion: React.FC<accordionProp> = ({ items }) => {
   return (
     <div className="space-y-2">
       {items?.map((item, index) => (
-        <div 
-        style={{ boxShadow: "inset 0px 0px 21px #25AAE1CC" }}
-          key={index} 
+        <div
+          data-aos="fade-up"
+          data-aos-delay={100 + index * 100}
+          style={{ boxShadow: "inset 0px 0px 21px #25AAE1CC" }}
+          key={index}
           className="text-white lg:max-w-[996px] mx-auto bg-[#58585833] rounded-[18px] overflow-hidden"
         >
           <div
@@ -49,10 +51,13 @@ const Accordion: React.FC<accordionProp> = ({ items }) => {
           </div>
           <div
             ref={(el) => {
-              contentRefs.current[index] = el
+              contentRefs.current[index] = el;
             }}
             style={{
-              maxHeight: openIndex === index ? `${contentRefs.current[index]?.scrollHeight}px` : "0px",
+              maxHeight:
+                openIndex === index
+                  ? `${contentRefs.current[index]?.scrollHeight}px`
+                  : "0px",
             }}
             className="transition-all duration-300 ease-in-out overflow-hidden"
           >

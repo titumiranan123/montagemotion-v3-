@@ -46,10 +46,12 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
   return (
     <div className="container section px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col text-white mx-auto gap-3 md:gap-4">
-        <h2 className="w-full text-center mx-auto gradienttext satoshi ">
+        <h2 data-aos="fade-up"
+            data-aos-delay="200" className="w-full text-center mx-auto gradienttext satoshi ">
           {title}
         </h2>
-        <p className="text-center">
+        <p data-aos="fade-up"
+            data-aos-delay="300" className="text-center">
           {description}
         </p>
       </div>
@@ -100,7 +102,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
               >
                 {video_message?.map(
                   (testimonial: ITestimonial, idx: number) => (
-                    <SwiperSlide key={testimonial.id || idx}>
+                    <SwiperSlide data-aos="fade-up" data-aos-delay={`${idx * 100}`} key={testimonial.id || idx}>
                       <TestimonialVideocard
                         testimonial={testimonial}
                         key={testimonial.id || idx}
@@ -147,7 +149,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
                 resistanceRatio={0.85}
               >
                 {messageTesti.map((testimonial: ITestimonial, idx: number) => (
-                  <SwiperSlide key={testimonial.id || idx}>
+                  <SwiperSlide data-aos="fade-up" data-aos-delay={`${idx * 100}`} key={testimonial.id || idx}>
                     <TestimonialMessagecard
                       testimonial={testimonial}
                       key={testimonial.id || idx}

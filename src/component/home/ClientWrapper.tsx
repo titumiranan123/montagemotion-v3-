@@ -13,7 +13,7 @@ import Services from "./Services";
 
 const ClientWraper = () => {
   const { data, isLoading } = useHomeApi("main");
-  // useSmoothScroll()
+  useSmoothScroll()
   return (
     <div className="header-background lg:px-0 px-2 ">
       <HeaderService isLoading={isLoading} mainIntro={data?.header} />

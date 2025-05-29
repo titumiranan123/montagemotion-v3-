@@ -39,13 +39,17 @@ const Homestackcardsection = ({ data, isLoading }: any) => {
   return (
     <>
       <div className="flex section container flex-col text-white  mx-auto gap-4">
-        <h2 className=" text-center mx-auto gradienttext satoshi">Full-form Video</h2>
-        <p className="text-center">
+        <h2   data-aos="fade-up"
+            data-aos-delay="200" className=" text-center mx-auto gradienttext satoshi">Full-form Video</h2>
+        <p data-aos="fade-up"
+            data-aos-delay="300" className="text-center">
           Montage Motion is an Advertising and Digital Agency speciallzing in
           InFluencer Marketing
         </p>
       </div>
       <div
+      data-aos="fade-up"
+            data-aos-delay="400"
         ref={containerRef}
         className="relative max-w-[1200px] mx-auto mt-10 lg:-mt-[40px]  flex flex-col items-center justify-center md:px-5   px-6"
       >
