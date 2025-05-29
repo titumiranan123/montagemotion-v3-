@@ -65,7 +65,7 @@ const Navbar = () => {
 //       }
   return (
     <header
-      className={`sticky top-0  z-50 transition-all duration-300 `}
+      className={`  z-50 transition-all duration-300 `}
     >
       <div className="max-w-[1000px] mx-auto  py-4">
         <nav className="flex justify-between items-center relative">
