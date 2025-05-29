@@ -62,7 +62,7 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "bg-[#080B0C] shadow-md" : "bg-transparent"}`}>
+    <header className={`sticky top-0  z-50 transition-all duration-300 ${isScrolled ? "bg-[#080B0C] shadow-md" : "bg-transparent"}`}>
       <div className="max-w-[996px] mx-auto px-4 py-4">
         <nav className="flex justify-between items-center relative">
           {/* Logo */}

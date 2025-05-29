@@ -12,13 +12,14 @@ interface Iservice {
   href: string;
 }
 const Servicecard = ({ serivce }: { serivce: Iservice }) => {
+
   return (
     <Link
       href={`${serivce.href}`}
-      className="md:w-[448px] md:h-[224px] w-full h-auto md:px-[22px] md:py-[66px] px-3 py-6 flex justify-between items-center gap-5 bg-[#58585833] relative overflow-hidden rounded-[9.91px]"
+      className="md:w-[448px] md:h-[224px] w-full h-[180px] p-5  flex justify-start gap-5 bg-[#58585833] relative overflow-hidden rounded-[9.91px]"
     >
       <div className="text-white space-y-1">
-        <h3 className="md:text-[24px] text-[20px] font-montserrat  font-[600] leading-[33.6px]">
+        <h3 className="md:text-[24px] text-[18px] leading-[24px] font-montserrat  font-[600] md:leading-[33.6px]">
           {serivce.title}
         </h3>
         <p className="">{serivce.description}</p>

@@ -39,7 +39,7 @@ const Homestackcardsection = ({ data, isLoading }: any) => {
   return (
     <>
       <div className="flex section container flex-col text-white  mx-auto gap-4">
-        <h2 className="lg:w-[800px] text-center mx-auto">Full-form Video</h2>
+        <h2 className=" text-center mx-auto gradienttext satoshi">Full-form Video</h2>
         <p className="text-center">
           Montage Motion is an Advertising and Digital Agency speciallzing in
           InFluencer Marketing
@@ -47,7 +47,7 @@ const Homestackcardsection = ({ data, isLoading }: any) => {
       </div>
       <div
         ref={containerRef}
-        className="relative max-w-[1200px] mx-auto mt-10 lg:mt-16  flex flex-col items-center justify-center md:px-5   px-6"
+        className="relative max-w-[1200px] mx-auto mt-10 lg:-mt-[40px]  flex flex-col items-center justify-center md:px-5   px-6"
       >
         {works.map((item, i) => {
           const rangeStart = works.length;

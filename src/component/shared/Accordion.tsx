@@ -22,6 +22,7 @@ const Accordion: React.FC<accordionProp> = ({ items }) => {
     <div className="space-y-2">
       {items?.map((item, index) => (
         <div 
+        style={{ boxShadow: "inset 0px 0px 21px #25AAE1CC" }}
           key={index} 
           className="text-white lg:max-w-[996px] mx-auto bg-[#58585833] rounded-[18px] overflow-hidden"
         >
@@ -29,7 +30,7 @@ const Accordion: React.FC<accordionProp> = ({ items }) => {
             className="cursor-pointer p-6 flex justify-between items-center"
             onClick={() => handleToggle(index)}
           >
-            <h3 className="font-[600] font-montserrat leading-[30px] text-[21px] flex items-center gap-2">
+            <h3 className="font-[600] font-montserrat leading-[30px] md:text-[21px] text-[16px] flex items-center gap-2">
               Q. {item.question}
             </h3>
             <div className="flex-shrink-0 ml-4">
@@ -56,7 +57,7 @@ const Accordion: React.FC<accordionProp> = ({ items }) => {
             className="transition-all duration-300 ease-in-out overflow-hidden"
           >
             <div className="px-6 pb-6 pt-0">
-              <p className="text-[18px] leading-[26px] font-opensans">
+              <p className="lg:text-[18px] lg:leading-[26px] text-sm font-opensans">
                 {item.answer}
               </p>
             </div>

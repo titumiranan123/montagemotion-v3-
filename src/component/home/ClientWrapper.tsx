@@ -21,7 +21,7 @@ const ClientWraper = () => {
       <CarStackScroll data={data?.works} isLoading={isLoading} />
 
       <Shortvideo />
-   {data?.testimonial.length > 0 && (
+      {data?.testimonial.length > 0 && (
         <TestimonailSection
           title={"Testimonials"}
           description={
@@ -30,15 +30,15 @@ const ClientWraper = () => {
           data={data?.testimonial}
           isLoading={isLoading}
         />
-      )} 
-   <Faqservice items={data?.faqs} /> 
-   <Pricingsection
+      )}
+      <Faqservice items={data?.faqs} />
+      <Pricingsection
         data={data?.pricing}
         title={"Pricing"}
         sub_title={
           "Montage Motion is an Advertising and Digital Agency specializing in Influencer Marketing"
         }
-      /> 
+      />
     </div>
   );
 };

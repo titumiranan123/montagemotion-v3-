@@ -24,9 +24,9 @@ interface Testimonial {
 const TestimonialVideocard = ({ testimonial }: { testimonial: Testimonial }) => {
   return (
     <div
-      className="w-[319px] h-[613px] p-6 rounded-[18px] flex flex-col gap-4"
+      className="md:w-[310px] w-[300px] mx-auto h-[613px] p-3 rounded-[18px] flex flex-col gap-4"
       style={{
-        boxShadow: "inset 0px 0px 24px 1px #0A303A",
+        boxShadow: "inset 0px 0px 21px  #25AAE1CC",
       }}
     >
       {/* Video Player Section */}

@@ -28,7 +28,7 @@ const Footer = () => {
           </p>
           <form
             onSubmit={onSubmit}
-            className="flex flex-col mt-4 lg:mt-8 sm:flex-row w-full max-w-[310px] h-[58px] p-2 rounded-[16px] bg-[#585858] gap-2 items-center"
+            className="flex flex-col mt-4 lg:mt-8 sm:flex-row w-full max-w-[310px] md:h-[58px] h-[110px] p-2 rounded-[16px] bg-[#585858]/20  gap-2 items-center"
           >
             <input
               type="email"
@@ -41,7 +41,7 @@ const Footer = () => {
             />
             <button
               type="submit"
-              className="w-full sm:w-auto px-4 py-2 rounded-[18px] text-white bg-[#1FB5DD] hover:bg-[#1899C0] transition-colors duration-300 font-medium focus:outline-none focus:ring-2 focus:ring-[#1FB5DD] focus:ring-opacity-50"
+              className="w-full sm:w-auto px-4 py-2 rounded-[10px] text-white bg-[#1FB5DD] hover:bg-[#1899C0] transition-colors duration-300 font-medium focus:outline-none focus:ring-2 focus:ring-[#1FB5DD] focus:ring-opacity-50"
               aria-label="Subscribe to newsletter"
             >
               Subscribe
@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
 
         {/* Services and Others */}
-        <div className="space-y-6">
+        <div className="space-y-6 lg:mt-0 mt-6">
           <div>
             <h3 className="font-bold text-[18px] md:text-[24px] text-white">
               Services

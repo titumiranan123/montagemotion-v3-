@@ -30,10 +30,10 @@ const Shortvideo: React.FC = () => {
   return (
     <div className="flex  section lg:flex-nowrap flex-wrap justify-between max-w-[996px]  overflow-hidden mx-auto  ">
       <div className=" lg:w-1/2 w-full flex justify-start flex-col">
-        <h2 className="bg-clip-text text-transparent bg-gradient-to-r from-[#FFFFFF] to-[#25AAE1] poppins font-bold  text-left ">
+        <h2 className="gradienttext  satoshi font-bold  text-left ">
           Our Short Form Video Editing
         </h2>
-        <p className="mt-[14px] md:mt-[34px] ptag text-[#D9D9D9] md:w-[505px] ">
+        <p className="mt-[14px] md:mt-[34px]  text-[#D9D9D9] md:w-[505px] ">
           Montage motion is the reliable digital solutions provider to grow your
           business 3x faster. We provide services on Video Editing and special
           service on Podcast.
@@ -41,7 +41,7 @@ const Shortvideo: React.FC = () => {
         <Link
           href={"https://calendly.com/imonofficial2/30min?month=2024-07"}
           target="_blank"
-          className="py-4 mt-[30px] md:mt-[52px] md:px-6 px-4 border bg-[#FFFFFF] rounded-[16px] flex justify-center items-center ptag text-[#03070D] md:w-[280px] w-[200px] shadow"
+          className="py-4 mt-[30px] md:mt-[52px] md:px-6 px-4  text-[#FFFFFF] rounded-[16px] flex justify-center items-center h-[56px]  md:w-[260px] w-[200px] shadow bg-[#25AAE1]"
         >
           Get Your Shorts Edited
         </Link>

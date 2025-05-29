@@ -32,22 +32,21 @@ const HeaderService: React.FC<HeaderServiceProps> = ({
     <section className="">
       <div className="relative w-full ">
         <div className="max-w-[800px] pt-16 lg:pt-[138px] mx-auto text-center md:text-left">
-          <h1 className="bg-gradient-to-r from-white via-white to-[#1fb5dd] bg-clip-text text-transparent  capitalize z-20  text-[45px] leading-[55px] lg:text-[64px] font-bold lg:leading-[82px] text-center">
+          <h1 className="gradienttext  capitalize z-20  text-[36px] leading-[45px] md:text-[45px] md:leading-[60px] lg:text-[64px] font-[700] lg:leading-[82px] text-center satoshi">
             {mainIntro?.title}
           </h1>
 
-          <p className="text-[#E4E8F7] text-[14px] sm:text-[16px] font-[400] mt-6">
+          <p className="text-[#E4E8F7] text-[14px] md:text-[16px] font-[400] mt-6">
             {mainIntro?.description}
           </p>
 
-          <div className="flex flex-row justify-center md:justify-center items-center gap-4  md:mt-16 mt-10">
+          <div className="flex flex-row justify-center md:justify-center items-center gap-4  md:mt-10 mt-6">
             <Link
               href="/works"
               className="flex justify-center items-center gap-3 font-bold text-[16px] p-4 text-white hover:border-none headerbutton"
             >
               Book a Call
             </Link>
-
             <Link
               href="https://calendly.com/imonofficial2/30min?month=2024-07"
               target="_blank"
@@ -61,7 +60,7 @@ const HeaderService: React.FC<HeaderServiceProps> = ({
 
         {/* Responsive Video Section */}
 
-        <div className="relative lg:w-[794px] mx-auto lg:h-[444px] w-full h-full aspect-video bg-black overhidden rounded-[39px] mt-10 lg:mt-24">
+        <div className="relative lg:w-[794px] mx-auto lg:h-[444px] w-full h-full aspect-video bg-black overhidden rounded-[39px] mt-7 lg:mt-16">
           <ReactPlayer
             url={mainIntro?.video_link}
             playing={false}

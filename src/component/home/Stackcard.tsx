@@ -32,7 +32,9 @@ const Stackcard = ({
       }}
       className="sticky  flex items-center justify-center w-[95%] min-h-[260px]  md:min-h-[200px] lg:min-h-screen pointer-events-none overflow-x-hidden"
     >
-      <div className="w-full h-[190px] sm:h-[260px] md:w-[700px] md:h-[410px] lg:w-[792px] lg:h-[464px] bg-white rounded-xl shadow-xl overflow-hidden pointer-events-auto border border-gray-200">
+      <div style={{boxShadow: "inset 0px 0px 21px #25AAE1CC", padding:"21px", backgroundColor:"#080B0C"}} className="w-full h-[190px] sm:h-[260px] md:w-[700px] md:h-[410px] lg:w-[792px] lg:h-[464px] bg-white rounded-xl shadow-xl overflow-hidden pointer-events-auto border border-[#0A303A]">
+        <div className="lg:w-[748px] lg:h-[421px] h-[145px] w-full overflow-hidden rounded-lg">
+          
         <ReactPlayer
           light={
             image && (image.startsWith("http") || image.startsWith("/"))
@@ -56,6 +58,7 @@ const Stackcard = ({
           width={"100%"}
           controls
         />
+        </div>
       </div>
     </motion.div>
   );

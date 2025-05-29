@@ -46,7 +46,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
   return (
     <div className="container section px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col text-white mx-auto gap-3 md:gap-4">
-        <h2 className="w-full text-center ">
+        <h2 className="w-full text-center mx-auto gradienttext satoshi ">
           {title}
         </h2>
         <p className="text-center">
@@ -77,20 +77,20 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
                 breakpoints={{
                   640: {
                     slidesPerView: 1,
-                    spaceBetween: 10,
+                    spaceBetween: 5,
                   },
                   768: {
                     slidesPerView: 2,
-                    spaceBetween: 10,
+                    spaceBetween: 5,
                   },
                   1024: {
                     slidesPerView: 3,
-                    spaceBetween: 20,
+                    spaceBetween: 5,
                     slidesPerGroup: 1,
                   },
                   1280: {
                     slidesPerView: 3,
-                    spaceBetween: 30,
+                    spaceBetween: 5,
                     slidesPerGroup: 1,
                   },
                 }}
@@ -111,7 +111,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
               </Swiper>}
              {messageTesti?.length > 0 && <Swiper
                 slidesPerView={1}
-                spaceBetween={20}
+                spaceBetween={10}
                 freeMode={false}
                
                 modules={[FreeMode, Pagination, Autoplay]}

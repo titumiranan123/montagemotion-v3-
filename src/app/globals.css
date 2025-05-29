@@ -1,4 +1,12 @@
 @import "tailwindcss";
+@font-face {
+  font-family: 'Satoshi-Bold';
+  src: url('./../../public/Fonts/Satoshi-Bold.otf');
+  font-weight: 700;
+}
+.satoshi{
+  font-family: 'Satoshi-Bold' !important;
+}
 #fluid {
   pointer-events: none !important;
 }
@@ -72,15 +80,14 @@
   backdrop-filter: blur(20px);
   background: #78d5ed33;
   border: 1px solid #78d5ed33;
-
   box-shadow: 0px 0px 25px 0px #ffffff40 inset;
 }
 
-/* .gradienttext {
+.gradienttext {
   background: linear-gradient(90deg, #ffffff 0%, #ffffff 49.89%, #1fb5dd 100%) !important;
   background-clip: text !important;
   color: transparent !important;
-} */
+}
 @layer base {
   h1 {
     font-family: var(--font-montserrat);
@@ -88,14 +95,15 @@
   }
   h2 {
     font-family: var(--font-montserrat);
-    @apply font-[700] lg:text-[64px] lg:leading-[76px] text-[25px] leading-[30px];
+    @apply font-[700] lg:text-[64px] lg:leading-[76px] text-[36px] leading-[40px];
+    
   }
   h3 {
     font-family: var(--font-montserrat);
     @apply font-[700] lg:text-[24px] lg:leading-[33.6px] text-[20px];
   }
   p {
-    font-family: var(--font-opensans);
+    font-family: var(--font-opensans) !important;
     @apply md:text-[16px] text-[14px] leading-[20px] md:leading-[22.4px] font-[400];
   }
 }
