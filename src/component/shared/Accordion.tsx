@@ -18,15 +18,18 @@ const Accordion: React.FC<accordionProp> = ({ items }) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+
+
+
   return (
     <div className="space-y-2">
       {items?.map((item, index) => (
         <div
           data-aos="fade-up"
           data-aos-delay={100 + index * 100}
-          style={{ boxShadow: "inset 0px 0px 21px #25AAE1CC" }}
+          style={{ boxShadow: "0px 4px 60px 0px #1FB5DD29 inset" }}
           key={index}
-          className="text-white lg:max-w-[996px] mx-auto bg-[#58585833] rounded-[18px] overflow-hidden"
+          className="text-white lg:max-w-[996px] mx-auto bg-[#080B0C] backdrop-blur-[21px] rounded-[18px] overflow-hidden h-[108px]"
         >
           <div
             className="cursor-pointer p-6 flex justify-between items-center"

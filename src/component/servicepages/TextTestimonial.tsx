@@ -26,10 +26,7 @@ const TestimonialMessagecard = ({
  
 }) => {
   return (
-    <div style={{
-  boxShadow: "inset 0px 0px 21px #25AAE1CC",
-      
-    }} className="md:w-[468px] md:h-[248px] md:p-6 w-full h-auto p-4 rounded-[18px] flex flex-col gap-4">
+    <div  style={{ boxShadow: "0px 4px 60px 0px #1FB5DD29 inset" }} className="md:w-[475px] md:h-[248px] md:p-6 w-full h-auto p-4 rounded-[18px] flex flex-col gap-4">
       <p className="text-white">{testimonial.message}</p>
       <div className="flex justify-start gap-10 h-[90px] items-center">
         <Image

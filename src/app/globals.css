@@ -125,6 +125,17 @@
   border-radius: 16px;
   height: 56px;
 }
+.btns {
+  border: 1px solid #78d5ed;
+  background: radial-gradient(
+    70.66% 100% at 49.78% 100%,
+    #caf0ff 0%,
+    #25aae1 100%
+  );
+  /* width: 133px; */
+  border-radius: 16px;
+  /* height: 56px; */
+}
 .headersecond {
   backdrop-filter: blur(20px);
   background: #78d5ed33;

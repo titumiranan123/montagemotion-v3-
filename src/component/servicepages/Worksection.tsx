@@ -30,7 +30,7 @@ const Worksection: React.FC<WorksectionProps> = ({
         <h2
           data-aos="fade-up"
           data-aos-delay="200"
-          className="w-full text-center mx-auto text-2xl sm:text-3xl md:text-4xl lg:text-5xl lg:max-w-[800px]"
+          className="w-full text-center mx-auto text-2xl sm:text-3xl md:text-4xl lg:text-5xl lg:max-w-[800px] gradienttext satoshi"
         >
           {title}
         </h2>

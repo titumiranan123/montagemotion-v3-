@@ -70,14 +70,14 @@ const Campaign = () => {
     >
       <div className="flex flex-col items-center">
         <div className="text-white flex flex-col justify-center items-center lg:w-[695px] gap-6 mx-auto w-full">
-          <h2 className="satoshi">Start Campaign</h2>
+          <h2 className=" gradienttext satoshi">Start Campaign</h2>
           <p>
             Montage Motion is an Advertising and Digital Agency specializing in
             Influencer Marketing.
           </p>
         </div>
 
-        <div className="max-w-[996px] rounded-[16px] py-10 px-6 w-full flex flex-col justify-center items-center bg-[#58585833] gap-5 md:gap-10 z-30 mt-[100px]">
+        <div style={{ boxShadow: "0px 4px 60px 0px #1FB5DD29 inset" }} className="max-w-[996px] rounded-[16px] py-10 px-6 w-full flex flex-col justify-center items-center bg-[#58585833] gap-5 md:gap-10 z-30 mt-[100px]">
           {/* <div className="flex ">
             <div
               className={`flex items-center ${
@@ -130,7 +130,7 @@ const Campaign = () => {
                   <button
                     type="button"
                     onClick={nextStep}
-                    className="bg-[#25AAE1] w-[101px] h-[56px] flex justify-center items-center p-5 rounded-[20px] text-white border-none transition duration-300 hover:bg-[#1e8dbd]"
+                    className="btns w-[101px] h-[56px] flex justify-center items-center p-5 rounded-[20px] text-white border-none transition duration-300 "
                   >
                     Next
                   </button>
@@ -193,7 +193,7 @@ const Campaign = () => {
                     <button
                       type="button"
                       onClick={nextStep}
-                      className="bg-[#25AAE1] w-[101px] h-[56px] flex justify-center items-center p-5 rounded-[20px] text-white border-none transition duration-300 hover:bg-[#1e8dbd]"
+                      className="btns w-[101px] h-[56px] flex justify-center items-center p-5 rounded-[20px] text-white border-none transition duration-300 "
                     >
                       Next
                     </button>
@@ -212,7 +212,7 @@ const Campaign = () => {
                       // }`}
                     >
                       
-                       <div className="w-[315px] min-h-[366px] h-full p-4 rounded-[17.54px] bg-[#58585833]">
+                       <div style={{ boxShadow: "0px 4px 60px 0px #1FB5DD29 inset" }} className="w-[315px] min-h-[366px] h-full p-4 rounded-[17.54px] bg-[#58585833]">
                       <input
                         type="checkbox"
                         
@@ -282,10 +282,10 @@ const Campaign = () => {
                   <button
                     type="submit"
                     disabled={!valid}
-                    className={`bg-[#25AAE1] w-[101px] h-[56px] flex justify-center items-center p-5 rounded-[20px] text-white border-none transition duration-300 ${
+                    className={`btns w-[101px] h-[56px] flex justify-center items-center p-5 rounded-[20px] text-white border-none transition duration-300 ${
                       !valid
                         ? "cursor-not-allowed opacity-50"
-                        : "cursor-pointer hover:bg-[#1e8dbd]"
+                        : "cursor-pointer "
                     }`}
                   >
                     Submit

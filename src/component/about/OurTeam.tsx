@@ -16,7 +16,7 @@ const OurTeam: React.FC<Member> = ({ members }) => {
     <div className="max-w-[1000px] mx-auto section">
       <div className="flex  flex-col text-white  mx-auto gap-4">
         <h2 data-aos="fade-up"
-          data-aos-delay="300" className="lg:w-[800px] text-center mx-auto satoshi">Our Team</h2>
+          data-aos-delay="300" className="lg:w-[800px] text-center mx-auto gradienttext satoshi">Our Team</h2>
         <p data-aos="fade-up"
           data-aos-delay="400" className="text-center font-[400]">
           Montage Motion is an Advertising and Digital Agency speciallzing in

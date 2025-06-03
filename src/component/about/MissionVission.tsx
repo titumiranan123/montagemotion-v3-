@@ -33,8 +33,8 @@ const Card = ({
 }) => {
   return (
     <div
-      style={{ boxShadow: "inset 0px 0px 21px #25AAE1CC" }}
-      className="md:w-[488px] md:h-[270px] space-y-0 w-full h-auto md:p-[22px] p-4 text-white bg-[#58585833] rounded-[19px]"
+       style={{ boxShadow: "0px 4px 60px 0px #1FB5DD29 inset" }}
+      className="md:w-[488px] md:h-[270px] space-y-0 w-full h-auto md:p-[22px] backdrop-blur-[21px] p-4 text-white bg-[#58585833] rounded-[19px]"
     >
       <h3 className="text-[24px] font-montserrat font-bold mb-4">{title}</h3>
       <p>{description}</p>

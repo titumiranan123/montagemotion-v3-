@@ -25,9 +25,7 @@ const TestimonialVideocard = ({ testimonial }: { testimonial: Testimonial }) => 
   return (
     <div
       className="md:w-[310px] w-[300px] mx-auto h-[613px] p-3 rounded-[18px] flex flex-col gap-4"
-      style={{
-        boxShadow: "inset 0px 0px 21px  #25AAE1CC",
-      }}
+       style={{ boxShadow: "0px 4px 60px 0px #1FB5DD29 inset" }}
     >
       {/* Video Player Section */}
       <div className="w-full h-[490px] rounded-[13px] overflow-hidden relative">

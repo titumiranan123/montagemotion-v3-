@@ -45,7 +45,7 @@ const Shortvideo: React.FC = () => {
             data-aos-delay="400"
           href={"https://calendly.com/imonofficial2/30min?month=2024-07"}
           target="_blank"
-          className="py-4 mt-[30px] md:mt-[52px] md:px-6 px-4  text-[#FFFFFF] rounded-[16px] flex justify-center items-center h-[56px]  md:w-[260px] w-[200px] shadow bg-[#25AAE1]"
+          className="py-4 mt-[30px] md:mt-[52px] md:px-6 px-4  text-[#FFFFFF] rounded-[16px] flex justify-center items-center h-[56px]  md:w-[260px] w-[200px] shadow btns"
         >
           Get Your Shorts Edited
         </Link>

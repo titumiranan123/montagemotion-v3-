@@ -39,7 +39,7 @@ const ContactForm = () => {
     >
       <div className=" flex  flex-col items-center ">
         <div className="text-white flex flex-col justify-center items-center lg:w-[695px] lg:gap-5 mx-auto w-full gap-4">
-          <h2 data-aos="fade-up" data-aos-delay="300" className="satoshi ">
+          <h2 data-aos="fade-up" data-aos-delay="300" className="satoshi gradienttext">
             Contact Us
           </h2>
           <p data-aos="fade-up" data-aos-delay="400">
@@ -157,7 +157,7 @@ const ContactForm = () => {
                 <button
                   data-aos="fade-up"
                   data-aos-delay="700"
-                  className={`bg-[#25AAE1] subscribe w-[101px] h-[56px] flex justify-center items-center  p-5 rounded-[16px] text-white border-none transition duration-300 ${
+                  className={`btns subscribe w-[101px] h-[56px] flex justify-center items-center  p-5 rounded-[16px] text-white border-none transition duration-300 ${
                     !valid
                       ? "cursor-not-allowed pointer-events-none"
                       : "cursor-pointer"

@@ -82,7 +82,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div style={{zIndex:9999}} className="hidden lg:flex items-center gap-4 text-[#DBDBDB] bg-[#58585833] bg-opacity-50 px-8 py-3 rounded-xl backdrop-blur-md h-[58px]">
+          <div style={{zIndex:9999}} className="hidden lg:flex items-center gap-4 text-[#DBDBDB] bg-[#58585833] bg-opacity-50 px-8 py-3 rounded-xl backdrop-blur-md max-w-[390px] w-full h-[60px]">
             <Link
               href="/"
               className={`hover:text-white transition-colors ${
@@ -173,7 +173,7 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center h-[60px]">
             <Link
               href="/contact"
-              className="active text-white font-semibold text-[16px] px-5 h-[50px] flex justify-center items-center w-[130px] rounded-lg  transition-colors"
+              className="active text-white font-semibold text-[16px] px-5  flex justify-center items-center h-[56px] w-[131px] rounded-[16px]   transition-colors"
             >
               Contact Us
             </Link>

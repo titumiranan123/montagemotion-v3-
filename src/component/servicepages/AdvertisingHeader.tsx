@@ -20,7 +20,7 @@ interface HeaderServiceProps {
   isLoading: boolean;
 }
 
-const HeaderService: React.FC<HeaderServiceProps> = ({
+const AddvertisingHeader: React.FC<HeaderServiceProps> = ({
   mainIntro,
   isLoading,
 }) => {
@@ -52,10 +52,10 @@ const HeaderService: React.FC<HeaderServiceProps> = ({
             <Link
               data-aos="fade-up"
               data-aos-delay="300"
-              href="https://calendly.com/imonofficial2/30min?month=2024-07"
-              className="flex justify-center items-center gap-3 font-bold text-[16px] p-4 text-white hover:border-none headerbutton rounded-[16px]"
+              href="/start-campaign"
+              className="flex justify-center items-center gap-3 font-bold text-[16px] p-4 text-white hover:border-none w-[190px] btns rounded-[16px]"
             >
-              Book a Call
+              Start A Campaign
             </Link>
             <Link
               data-aos="fade-up"
@@ -145,4 +145,4 @@ const SkeletonLoader = () => {
   );
 };
 
-export default HeaderService;
+export default AddvertisingHeader;

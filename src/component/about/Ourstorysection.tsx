@@ -51,20 +51,23 @@ const Ourstorysection: React.FC<AboutProps> = ({ about, isLoading }) => {
   }
   return (
     <div className="max-w-[1000px] mx-auto flex lg:flex-row flex-col justify-between items-center lg:gap-[60px] gap-16">
-      <Image
-        data-aos="fade-up"
-        data-aos-delay="200"
+      <div  data-aos="fade-up"
+        data-aos-delay="200" className=" sm:w-1/2 w-full">
+        <Image
+       className="md:w-[418.25px] md:h-[596px]"
         src={about && about?.image}
         alt=""
         width={418.25}
         height={569}
       />
-      <div data-aos="fade-up"
+      </div>
+      <div className="sm:w-1/2 w-full" data-aos="fade-up"
           data-aos-delay="300">
         <h2
+        
           data-aos="fade-up"
           data-aos-delay="300"
-          className="text-white satoshi"
+          className="text-white satoshi gradienttext"
         >
           {about && about?.title}
         </h2>

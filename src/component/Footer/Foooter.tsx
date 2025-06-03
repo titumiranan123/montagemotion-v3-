@@ -63,7 +63,7 @@ const Footer = () => {
             />
             <button
               type="submit"
-              className="w-full sm:w-auto px-4 py-2 rounded-[10px] text-white bg-[#1FB5DD] hover:bg-[#1899C0] transition-colors duration-300 font-medium focus:outline-none focus:ring-2 focus:ring-[#1FB5DD] focus:ring-opacity-50"
+              className="w-full sm:w-auto px-4 py-2 rounded-[10px] text-white btns transition-colors duration-300 font-medium focus:outline-none "
               aria-label="Subscribe to newsletter"
             >
               Subscribe

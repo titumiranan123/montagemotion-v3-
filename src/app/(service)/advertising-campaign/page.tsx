@@ -8,6 +8,7 @@ import React from "react";
 import TestimonailSection from "@/src/component/servicepages/Testimonial";
 import Pricingsection from "@/src/component/servicepages/Pricingsection";
 import ShortsWorkSection from "@/src/component/servicepages/ShortsWorkSection";
+import AddvertisingHeader from "@/src/component/servicepages/AdvertisingHeader";
 const AdvertisingService = () => {
   const { data, isLoading } = useHomeApi("advertising");
   // faqs
@@ -17,7 +18,7 @@ const AdvertisingService = () => {
   console.log(shorts, "shorts");
   return (
     <div className="header-background px-4">
-      <HeaderService isLoading={isLoading} mainIntro={data?.header} />
+      <AddvertisingHeader isLoading={isLoading} mainIntro={data?.header} />
       <Worksection
         data={ovc}
         title="Our Ovc"
